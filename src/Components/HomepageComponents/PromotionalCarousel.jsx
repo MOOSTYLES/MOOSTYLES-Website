@@ -2,7 +2,8 @@ import { useEffect, useState } from "react";
 
 const HERO_IMAGES = [
   "/projects/HeroSection/PITAPATA - ADVERTISING.png",
-  "/projects/HeroSection/MOOR - Brand Launch.png",
+  "/projects/HeroSection/Poster 1.png",
+  "/projects/HeroSection/Poster 2.png",
 ];
 
 export const PromotionalCarousel = () => {

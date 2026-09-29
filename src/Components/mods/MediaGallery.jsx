@@ -1,9 +1,10 @@
 import { useState } from "react";
 import { SkeletonImage } from "@/Components/ui/SkeletonImage";
+import { getImageAlt } from "@/lib/imageMeta";
 
 const isVideo = (src) => typeof src === "string" && /\.mp4(\?|$)/i.test(src);
 
-const Thumb = ({ src, isActive, onSelect }) => (
+const Thumb = ({ src, name, isActive, onSelect }) => (
   <button
     type="button"
     role="listitem"
@@ -14,12 +15,12 @@ const Thumb = ({ src, isActive, onSelect }) => (
     {isVideo(src) ? (
       <video className="media-gallery__thumb-media" src={src} muted loading="lazy" />
     ) : (
-      <SkeletonImage src={src} alt="" imgClassName="media-gallery__thumb-media" loading="lazy" />
+      <SkeletonImage src={src} alt={getImageAlt(src, name)} imgClassName="media-gallery__thumb-media" loading="lazy" />
     )}
   </button>
 );
 
-export const MediaGallery = ({ banner, previews = [], screenshots = [] }) => {
+export const MediaGallery = ({ name = "", banner, previews = [], screenshots = [] }) => {
   const [selected, setSelected] = useState(banner);
   const extras = [...previews, ...screenshots];
 
@@ -28,7 +29,7 @@ export const MediaGallery = ({ banner, previews = [], screenshots = [] }) => {
       {extras.length > 0 && (
         <div className="media-gallery__thumbs" role="list" aria-label="Additional images">
           {extras.map((src, index) => (
-            <Thumb key={`extra-${index}`} src={src} isActive={src === selected} onSelect={setSelected} />
+            <Thumb key={`extra-${index}`} src={src} name={name} isActive={src === selected} onSelect={setSelected} />
           ))}
         </div>
       )}
@@ -49,7 +50,7 @@ export const MediaGallery = ({ banner, previews = [], screenshots = [] }) => {
             key={selected}
             imgClassName="media-gallery__main-media"
             src={selected}
-            alt=""
+            alt={getImageAlt(selected, name)}
             loading="eager"
           />
         )}

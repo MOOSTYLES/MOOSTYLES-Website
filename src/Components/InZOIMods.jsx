@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import { SkeletonImage } from "./ui/SkeletonImage";
+import { getImageAlt } from "@/lib/imageMeta";
 
 const InZOIMods = ({ item, href, onClick }) => {
   const imageSrc = item?.image || item?.images?.[0] || item?.src || '/projects/Brand Medias/Recommend Category/placeholder.png';
@@ -17,7 +18,7 @@ const InZOIMods = ({ item, href, onClick }) => {
       <div className="media-card__image">
         <SkeletonImage
           src={imageSrc}
-          alt={item?.title || 'InZOI mod image'}
+          alt={getImageAlt(imageSrc, item?.name || item?.title || 'inZOI mod')}
           imgClassName="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
         />
       </div>

@@ -5,6 +5,7 @@ import { WebsiteBackground } from "@/Components/WebsiteBackground";
 import { Metadata } from "@/Components/Metadata.jsx";
 import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 import { getGalleryEntries } from "@/lib/mods";
+import { getImageAlt } from "@/lib/imageMeta";
 
 export const GalleryEntry = () => {
   const { slug } = useParams();
@@ -40,7 +41,7 @@ export const GalleryEntry = () => {
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
         <Breadcrumb to="/gallery" label="Gallery" />
         <h1 className="mod-detail__title newdesign-heading">{entry.modName}</h1>
-        <img src={entry.src} alt={entry.modName} className="gallery-entry__image" />
+        <img src={entry.src} alt={getImageAlt(entry.src, entry.modName)} className="gallery-entry__image" />
         <Link to={`/mods/${entry.modSlug}`} className="mod-breadcrumb">
           View {entry.modName}
         </Link>

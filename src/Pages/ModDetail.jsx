@@ -86,6 +86,7 @@ export const ModDetail = () => {
         <div className="mod-detail__layout">
           <div className="mod-detail__media-col">
             <MediaGallery
+              name={mod.name}
               banner={mod.media.banner}
               previews={mod.media.previews}
               screenshots={mod.media.screenshots}

@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { useLocation } from 'react-router-dom';
 import { SITE_URL } from '@/lib/config';
+import { getImageAlt } from '@/lib/imageMeta';
 
 const toAbsoluteUrl = (value, siteUrl, fallback = siteUrl) => {
   if (!value) {
@@ -26,7 +27,7 @@ const Metadata = ({
 
   ogTitle = "",
   ogDescription = "",
-  ogImage = "/projects/HeroSection/MOOSTYLESBANNER.png",
+  ogImage = "/projects/HeroSection/moostyles-banner.png",
   ogUrl = "",
   ogType = "website",
   ogSiteName = "MOOSTYLES",
@@ -61,6 +62,7 @@ const Metadata = ({
   const finalTwitterTitle = twitterTitle || finalTitle;
   const finalTwitterDescription = twitterDescription || finalDescription;
   const finalTwitterImage = twitterImage || finalImage;
+  const finalImageAlt = getImageAlt(twitterImage || ogImage, finalTitle);
 
   const generateStructuredData = () => {
     const baseData = {
@@ -243,6 +245,7 @@ const Metadata = ({
       <meta property="og:title" content={finalTitle} />
       <meta property="og:description" content={finalDescription} />
       <meta property="og:image" content={finalImage} />
+      <meta property="og:image:alt" content={finalImageAlt} />
       <meta property="og:url" content={finalUrl} />
       <meta property="og:site_name" content={ogSiteName} />
       <meta property="og:locale" content="en_US" />
@@ -263,6 +266,7 @@ const Metadata = ({
       <meta name="twitter:title" content={finalTwitterTitle} />
       <meta name="twitter:description" content={finalTwitterDescription} />
       <meta name="twitter:image" content={finalTwitterImage} />
+      <meta name="twitter:image:alt" content={finalImageAlt} />
       <meta name="twitter:site" content={twitterSite} />
       <meta name="twitter:creator" content={twitterCreator} />
 

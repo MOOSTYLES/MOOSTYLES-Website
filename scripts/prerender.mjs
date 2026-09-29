@@ -8,7 +8,7 @@ const root = path.resolve(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const ssrEntry = path.join(root, 'dist-ssr', 'entry-server.js');
 
-const { render, getStaticRoutes } = await import(pathToFileURL(ssrEntry).href);
+const { render, getStaticRoutes, getRouteImages } = await import(pathToFileURL(ssrEntry).href);
 
 const template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
 
@@ -52,6 +52,18 @@ fs.writeFileSync(
 );
 
 const today = new Date().toISOString().slice(0, 10);
+const routeImages = getRouteImages();
+const escapeXml = (value) =>
+  value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+const imageEntries = (r) =>
+  (routeImages[r] ?? [])
+    .map(
+      (src) => `
+    <image:image>
+      <image:loc>${escapeXml(SITE_URL + encodeURI(src))}</image:loc>
+    </image:image>`
+    )
+    .join('');
 const sitemapEntries = routes
   .filter((r) => r !== '/saved-products')
   .map(
@@ -59,11 +71,11 @@ const sitemapEntries = routes
     <loc>${SITE_URL}${r === '/' ? '/' : r}</loc>
     <lastmod>${today}</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>${r === '/' ? '1.0' : '0.8'}</priority>
+    <priority>${r === '/' ? '1.0' : '0.8'}</priority>${imageEntries(r)}
   </url>`
   )
   .join('\n');
-const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${sitemapEntries}\n</urlset>\n`;
+const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">\n${sitemapEntries}\n</urlset>\n`;
 fs.writeFileSync(path.join(distDir, 'sitemap.xml'), sitemap, 'utf-8');
 
 fs.writeFileSync(

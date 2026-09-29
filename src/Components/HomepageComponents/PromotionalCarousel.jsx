@@ -1,10 +1,6 @@
 import { useEffect, useState } from "react";
-
-const HERO_IMAGES = [
-  "/projects/HeroSection/PITAPATA - ADVERTISING.png",
-  "/projects/HeroSection/Poster 1.png",
-  "/projects/HeroSection/Poster 2.png",
-];
+import { getImageAlt } from "@/lib/imageMeta";
+import { HERO_IMAGES } from "@/content/heroImages";
 
 export const PromotionalCarousel = () => {
   const [activeIndex, setActiveIndex] = useState(0);
@@ -28,7 +24,7 @@ export const PromotionalCarousel = () => {
           <img
             key={imagePath}
             src={imagePath}
-            alt="MOOSTYLES Banner"
+            alt={getImageAlt(imagePath, "MOOSTYLES banner")}
             className={`hero-banner-image ${
               index === activeIndex ? "hero-banner-image-active" : "hero-banner-image-inactive"
             }`}

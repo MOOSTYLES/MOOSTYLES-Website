@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Heart, User } from "lucide-react";
 import { Link } from "react-router-dom";
 import { SkeletonImage } from "./ui/SkeletonImage";
+import { getImageAlt } from "@/lib/imageMeta";
 import { motion } from "framer-motion";
 import { saveProduct, unsaveProduct, isProductSaved } from "@/lib/savedProducts";
 
@@ -87,7 +88,7 @@ export const ProductCard = ({ product, onToggleFavorite }) => {
           <SkeletonImage
             src={product.image}
             fallbackSrc={FALLBACK_IMAGE}
-            alt={product.name}
+            alt={getImageAlt(product.image, product.name)}
             imgClassName="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
           />
 

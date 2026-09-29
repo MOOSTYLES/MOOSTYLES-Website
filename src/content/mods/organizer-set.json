@@ -8,12 +8,12 @@
     "gameVersion": "inZOI"
   },
   "media": {
-    "banner": "/projects/Products/Archive Images/Stationary Organizer/Stationary Organizer_Thumbnail_CF.png",
+    "banner": "/projects/Products/Archive Images/Stationary Organizer/organizer-set-on-desk.png",
     "previews": [
-      "/projects/Products/Archive Images/Stationary Organizer/glasses.png",
-      "/projects/Products/Archive Images/Stationary Organizer/phone.png",
-      "/projects/Products/Archive Images/Stationary Organizer/_thumbnail1.png",
-      "/projects/Products/Archive Images/Stationary Organizer/large.png"
+      "/projects/Products/Archive Images/Stationary Organizer/organizer-set-glasses-tray.png",
+      "/projects/Products/Archive Images/Stationary Organizer/organizer-set-phone-stand.png",
+      "/projects/Products/Archive Images/Stationary Organizer/organizer-set-trinket-dish.png",
+      "/projects/Products/Archive Images/Stationary Organizer/organizer-set-pen-cup.png"
     ],
     "screenshots": []
   },

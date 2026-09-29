@@ -1,0 +1,275 @@
+{
+  "/projects/HeroSection/moostyles-banner.png": {
+    "title": "MOOSTYLES Banner",
+    "alt": "MOOSTYLES banner: an inZOI character in a black turtleneck stands in front of large white MOOSTYLES lettering on a teal background, with two blurred copies behind them"
+  },
+  "/projects/HeroSection/pitapata-chibi-characters-banner.png": {
+    "title": "PITAPATA Chibi Characters Banner",
+    "alt": "PITAPATA Chibi Characters banner: a waving white sprout-topped chibi figure and a brown-haired chibi in a blue shirt holding a SugarZoi sign, on a pale blue background"
+  },
+  "/projects/HeroSection/ardenne-aster-poster-making-you-go-faster.png": {
+    "title": "ARDENNE Aster Poster - Making You Go Faster",
+    "alt": "ARDENNE Aster poster: the rear of a dark sedan with glowing red tail lights in a dim studio, captioned \"Making You Go Faster\""
+  },
+  "/projects/HeroSection/ardenne-aster-poster-their-fossil-your-fuel.png": {
+    "title": "ARDENNE Aster Poster - Their Fossil, Your Fuel",
+    "alt": "ARDENNE Aster poster: a white coupe with black wheels parked on a glossy floor in warm sunset light, captioned \"Their Fossil, Your Fuel\""
+  },
+
+  "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png": { "title": "MOOSTYLES Logo", "alt": "MOOSTYLES logo" },
+  "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png": { "title": "MOOSTYLES Logo", "alt": "MOOSTYLES logo" },
+  "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png": { "title": "MOOSTYLES Logo", "alt": "MOOSTYLES logo" },
+  "/projects/Website Branding/MOOSTYLES LOGO - WHITE COLOR.png": { "title": "MOOSTYLES Logo", "alt": "MOOSTYLES logo" },
+
+  "/projects/Mods/angular-glasswood-table/angular-glasswood-table-living-room.jpg": {
+    "alt": "Angular Glasswood Table in a sunlit inZOI living room: a rectangular glass top on a faceted dark wood base, holding a teapot tray and a reed diffuser"
+  },
+  "/projects/Mods/angular-glasswood-table/angular-glasswood-table-living-room-wide.jpg": {
+    "alt": "Wide view of an inZOI living room with the Angular Glasswood Table between a mustard sofa and a wooden armchair, facing a wall-mounted TV"
+  },
+
+  "/projects/Mods/halo-executive-chair/halo-executive-chair-top-down.jpg": {
+    "alt": "Top-down view of the cream Halo Executive Chair with dark piping, tucked behind a desk with a monitor in an inZOI office"
+  },
+  "/projects/Mods/halo-executive-chair/halo-executive-chair-office-overhead.jpg": {
+    "alt": "Overhead view of an inZOI office with the cream Halo Executive Chair between an L-shaped desk and wooden shelves of colored binders"
+  },
+  "/projects/Mods/halo-executive-chair/halo-executive-chair-at-desk.jpg": {
+    "alt": "The Halo Executive Chair on a five-wheel base beside a desk with a monitor and keyboard, next to wooden binder shelves in warm light"
+  },
+
+  "/projects/Mods/seeglass-mirror/seeglass-standing-mirror-doorway.jpg": {
+    "alt": "SeeGlass Standing Mirror seen through a doorway: a tall rounded mirror with a dark wood L-shaped base and a small floating drawer"
+  },
+  "/projects/Mods/seeglass-mirror/seeglass-standing-mirror-hallway.jpg": {
+    "alt": "Closer view of the SeeGlass Standing Mirror in a hallway, its tall rounded glass reflecting a bedroom, beside a potted snake plant"
+  },
+  "/projects/Mods/seeglass-mirror/seeglass-standing-mirror-bedroom-view.jpg": {
+    "alt": "An inZOI bedroom with a bedside lamp; the SeeGlass Standing Mirror stands in the hallway beyond an open doorway"
+  },
+
+  "/projects/Mods/trove-tray/trove-tray-on-sideboard.jpg": {
+    "alt": "TROVE Tray, a light wooden serving tray holding a white bowl and a phone, on a ribbed sideboard in afternoon sun"
+  },
+  "/projects/Mods/trove-tray/trove-tray-dining-room.jpg": {
+    "alt": "The TROVE Tray on a ribbed sideboard beneath abstract wall art, with a potted plant and woven basket, in a sunlit inZOI dining room"
+  },
+  "/projects/Mods/trove-tray/trove-tray-kitchen-island.jpg": {
+    "alt": "The TROVE Tray on a marble kitchen island holding a bottle, candles and a bowl, next to a dish rack and sink"
+  },
+
+  "/projects/Products/Archive Images/Anniversary Gift/inzoi-1st-anniversary-folding-screen.png": {
+    "alt": "inZOI 1st Anniversary Gift room partitioner: a four-panel folding screen painted with a cat through winter, autumn, summer and spring scenes",
+    "rights": "Artwork © inZOI Studios. Image by MOOSTYLES."
+  },
+  "/projects/Products/Archive Images/Anniversary Gift/inzoi-1st-anniversary-folding-screen-lounge.jpg": {
+    "alt": "The inZOI 1st Anniversary folding screen behind wooden lounge chairs and an orange round table in a high-rise inZOI lounge",
+    "rights": "Artwork © inZOI Studios. Image by MOOSTYLES."
+  },
+
+  "/projects/Products/Archive Images/Birch Couch Set/birch-couch.png": {
+    "alt": "Birch Couch render: grey bolster-style cushions held between two rounded birch wood side panels"
+  },
+  "/projects/Products/Archive Images/Birch Couch Set/birch-couch-set-apartment.jpg": {
+    "alt": "The Birch Couch Set with white cushions and birch panels arranged around an orange round table in a city-view inZOI apartment"
+  },
+
+  "/projects/Products/Archive Images/Bow Couch and Chair/bow-couch-and-chair.png": {
+    "alt": "Bow Couch and Chair render: white cushioned seats wrapped by one continuous curved walnut frame forming the armrests"
+  },
+  "/projects/Products/Archive Images/Bow Couch and Chair/bow-couch-and-chair-lounge.jpg": {
+    "alt": "An inZOI character sits on the Bow Couch beside two matching Bow Chairs and an orange round table in a sunny lounge"
+  },
+
+  "/projects/Products/Archive Images/Executive Desk/executive-desk.png": {
+    "alt": "Executive Desk render: a long wood-grain top over a grey L-shaped base with cabinet doors and three drawers"
+  },
+  "/projects/Products/Archive Images/Executive Desk/executive-desk-office-overhead.jpg": {
+    "alt": "Overhead view of an inZOI character working at the Executive Desk with a monitor, keyboard and fax machine"
+  },
+
+  "/projects/Products/Archive Images/Glass Coffee Table/glass-coffee-table.png": {
+    "alt": "Glass Coffee Table render: a rounded triangular smoked-glass top resting on two interlocking curved white legs"
+  },
+  "/projects/Products/Archive Images/Glass Coffee Table/glass-coffee-table-living-room.jpg": {
+    "alt": "The Glass Coffee Table with a small vase in a beige living room, with an inZOI character standing behind it near a sofa"
+  },
+
+  "/projects/Products/Archive Images/Gleems Glass Side Table/gleem-glass-side-table.png": {
+    "alt": "Gleem Glass Side Table render: an open wooden cube frame with a tinted glass shelf in the middle"
+  },
+  "/projects/Products/Archive Images/Gleems Glass Side Table/gleem-glass-side-table-bedroom.jpg": {
+    "alt": "The Gleem Glass Side Table beside a bed, holding a glowing table lamp with jars on its glass shelf"
+  },
+
+  "/projects/Products/Archive Images/Gleems Side Table/gleem-side-table.png": {
+    "alt": "Gleem Side Table render: a solid wooden block with an open black-framed cubby cut into one side"
+  },
+  "/projects/Products/Archive Images/Gleems Side Table/gleem-side-table-bedroom.jpg": {
+    "alt": "The Gleem Side Table next to a bed against warm wood paneling, with a chrome desk lamp on top"
+  },
+
+  "/projects/Products/Archive Images/Hasaan Wooden TV Stand/hasaan-wooden-tv-stand.png": {
+    "alt": "Hasaan Wooden TV Stand render: a low walnut console with a hollow open frame and slim panel legs"
+  },
+  "/projects/Products/Archive Images/Hasaan Wooden TV Stand/hasaan-wooden-tv-stand-living-room.jpg": {
+    "alt": "The Hasaan Wooden TV Stand holding a flat-screen TV between two tall floor speakers in a stone-walled inZOI living room"
+  },
+
+  "/projects/Products/Archive Images/Hasaun Side Table V1/hasaun-side-table-v1.png": {
+    "alt": "Hasaun Side Table V1 render: a white open-front box and lower shelf held in a black square-leg frame"
+  },
+  "/projects/Products/Archive Images/Hasaun Side Table V1/hasaun-side-table-v1-bedroom.jpg": {
+    "alt": "Hasaun Side Table V1 beside a bed, holding a black ceramic table lamp, with a book and small vase on its shelves"
+  },
+
+  "/projects/Products/Archive Images/Hasaun Side Table V2/hasaun-side-table-v2.jpg": {
+    "alt": "Hasaun Side Table V2: a grey open-front box on a light wood cantilever frame, with a pen cup on top, in warm sunlight"
+  },
+  "/projects/Products/Archive Images/Hasaun Side Table V2/hasaun-side-table-v2-living-room.jpg": {
+    "alt": "Hasaun Side Table V2 against a wood-paneled wall beside a ribbed sideboard, a large leafy plant and a grey chair"
+  },
+
+  "/projects/Products/Archive Images/IROE Coffee Table/iroe-coffee-table.png": {
+    "alt": "IROE Coffee Table render: a round high-gloss amber top set into a white marble rim on thick round legs"
+  },
+  "/projects/Products/Archive Images/IROE Coffee Table/iroe-coffee-table-apartment.jpg": {
+    "alt": "The IROE Coffee Table in front of a tan leather sectional in a high-rise inZOI apartment with city skyline windows"
+  },
+
+  "/projects/Products/Archive Images/Interlocked BookShelf/interlocked-shelf-above-sofa.jpg": {
+    "alt": "Interlocked Shelf mounted above a mustard sofa: offset wood-lined tiers in a dark frame holding teal vases, books and a plant"
+  },
+  "/projects/Products/Archive Images/Interlocked BookShelf/interlocked-shelf-living-room.jpg": {
+    "alt": "Wider view of the Interlocked Shelf above a sofa, beside a floor lamp and a tall wooden bookcase of binders"
+  },
+
+  "/projects/Products/Archive Images/JellyFish Light/jellyfish-pendant-light.png": {
+    "alt": "JellyFish Light render: a translucent blue glass pendant shaped like a jellyfish with a glowing bulb inside, on a black background"
+  },
+  "/projects/Products/Archive Images/JellyFish Light/jellyfish-pendant-light-dining-room.jpg": {
+    "alt": "The JellyFish Light hanging over a wooden dining table with orange chairs in an open-plan inZOI kitchen"
+  },
+
+  "/projects/Products/Archive Images/LoWave Circular Side Table/lowave-circular-side-table.png": {
+    "alt": "LoWave Circular Side Table render: a glossy taupe cylinder with a curved open cutout at the bottom"
+  },
+  "/projects/Products/Archive Images/LoWave Circular Side Table/lowave-circular-side-table-bedroom.jpg": {
+    "alt": "The LoWave Circular Side Table beside a bed with a lit table lamp and a small clock on top"
+  },
+
+  "/projects/Products/Archive Images/LongRoundedTable/long-rounded-table.png": {
+    "alt": "Long Rounded Table render: a long, low cream console with pill-shaped rounded ends, an open compartment and short legs"
+  },
+  "/projects/Products/Archive Images/LongRoundedTable/long-rounded-table-tv-stand.jpg": {
+    "alt": "The Long Rounded Table holding a TV against a plain wall, with an inZOI character standing beside it for scale"
+  },
+
+  "/projects/Products/Archive Images/Mirrored Shelf/mirrored-shelf.png": {
+    "alt": "Mirrored Shelf render: a tall rounded cream frame with a full-length mirror in the center and shelf rows on both sides"
+  },
+  "/projects/Products/Archive Images/Mirrored Shelf/mirrored-shelf-with-decor.jpg": {
+    "alt": "The Mirrored Shelf decorated with plants and vases, with an inZOI character standing beside it for scale"
+  },
+
+  "/projects/Products/Archive Images/RoundedWoodenShelf/rounded-wooden-shelf.png": {
+    "alt": "Rounded Wooden Shelf render: stacked, offset wooden loops with rounded ends forming several open tiers"
+  },
+  "/projects/Products/Archive Images/RoundedWoodenShelf/rounded-wooden-shelf-with-books.jpg": {
+    "alt": "The Rounded Wooden Shelf filled with books, teal vases and small plants, with an inZOI character standing beside it"
+  },
+
+  "/projects/Products/Archive Images/Small Side Table/small-side-table.png": {
+    "alt": "Small Side Table render: a cream tray-top table with rounded corners on four black legs"
+  },
+  "/projects/Products/Archive Images/Small Side Table/small-side-table-beside-sofa.jpg": {
+    "alt": "The Small Side Table holding a lit lamp and a lotion bottle beside a sofa where an inZOI character is sitting"
+  },
+
+  "/projects/Products/Archive Images/Square Wall Shelf/square-wall-shelf.png": {
+    "alt": "Square Wall Shelf render: two long wood-framed shelves with black backs, joined by two dark grey cube cubbies"
+  },
+  "/projects/Products/Archive Images/Square Wall Shelf/square-wall-shelf-on-wall.jpg": {
+    "alt": "The Square Wall Shelf mounted on a grey stone wall, holding teal vases, books, a basket and small plants"
+  },
+
+  "/projects/Products/Archive Images/Stylized Glass Side Table/stylized-glass-side-table.png": {
+    "alt": "Stylized Glass Side Table render: translucent deep-red glass panels bolted to a white metal cube frame"
+  },
+  "/projects/Products/Archive Images/Stylized Glass Side Table/stylized-glass-side-table-bedroom.jpg": {
+    "alt": "The red Stylized Glass Side Table with a digital clock beside a bed, in a red-walled inZOI bedroom with a character standing nearby"
+  },
+
+  "/projects/Products/Archive Images/Stylized Metal TV Stand/stylized-metal-tv-stand.png": {
+    "alt": "Stylized Metal TV Stand render: one continuous bent sheet of grey metal looping into a low two-level stand"
+  },
+  "/projects/Products/Archive Images/Stylized Metal TV Stand/stylized-metal-tv-stand-with-tv.jpg": {
+    "alt": "The Stylized Metal TV Stand holding a large TV, with an inZOI character standing beside it for scale"
+  },
+
+  "/projects/Products/Archive Images/WoodSteelFrame/steel-frame-wooden-shelf.png": {
+    "alt": "Steel Frame Wooden Shelf render: three dark wood box shelves held on two black steel ladder frames"
+  },
+  "/projects/Products/Archive Images/WoodSteelFrame/steel-frame-wooden-shelf-styled.jpg": {
+    "alt": "The Steel Frame Wooden Shelf styled with books, vases and baskets, with an inZOI character standing beside it"
+  },
+  "/projects/Products/Archive Images/WoodSteelFrame/steel-frame-wooden-shelf-front.jpg": {
+    "alt": "Front view of the Steel Frame Wooden Shelf against a plaster wall, its three wooden tiers filled with books and decor"
+  },
+
+  "/projects/Products/Archive Images/WoodenSwirledShelf/wooden-swirled-shelf.png": {
+    "alt": "Wooden Swirled Shelf render: a tall narrow walnut unit whose side panels twist in a spiral around four small shelves"
+  },
+  "/projects/Products/Archive Images/WoodenSwirledShelf/wooden-swirled-shelf-corner.jpg": {
+    "alt": "The Wooden Swirled Shelf in a room corner with a vase on top and small decor on each tier, beside an inZOI character"
+  },
+
+  "/projects/Products/Archive Images/Stationary Organizer/organizer-set-on-desk.png": {
+    "alt": "Organizer Set on a wooden desk: a ribbed pen cup, a glasses tray, a phone stand holding a phone, and a small round dish"
+  },
+  "/projects/Products/Archive Images/Stationary Organizer/organizer-set-glasses-tray.png": {
+    "alt": "Organizer Set glasses tray: a ribbed oval tan tray holding a pair of black glasses"
+  },
+  "/projects/Products/Archive Images/Stationary Organizer/organizer-set-phone-stand.png": {
+    "alt": "Organizer Set phone stand: a ribbed tan stand holding a phone that is playing music"
+  },
+  "/projects/Products/Archive Images/Stationary Organizer/organizer-set-trinket-dish.png": {
+    "alt": "Organizer Set trinket dish: a small round ribbed tan dish"
+  },
+  "/projects/Products/Archive Images/Stationary Organizer/organizer-set-pen-cup.png": {
+    "alt": "Organizer Set pen cup: a tall ribbed tan cup holding two pencils"
+  },
+
+  "/projects/Products/MOCA Brand/moca-cafe-logo.png": {
+    "alt": "MOCA logo: bold rounded green MOCA lettering over a blurred street scene"
+  },
+  "/projects/Products/MOCA Brand/moca-cafe-building-exterior.png": {
+    "alt": "MOCA Cafe building in inZOI: a two-story wood and cream cafe with a green vertical MOCA sign, a MOCA Café banner and a sidewalk menu board"
+  },
+  "/projects/Products/MOCA Brand/moca-drink-cups-poster.png": {
+    "alt": "MOCA poster, \"Colors and Taste of Pleasure\": three branded drink cups in White Mocha, Mint Choco and Milk Choco flavors"
+  },
+  "/projects/Products/MOCA Brand/moca-strawberry-tea-cans-poster.png": {
+    "alt": "MOCA poster, \"A taste of sweetness!\": pink triangular MOCA strawberry bubble fruit tea cans on a pink background"
+  },
+
+  "/projects/Products/PITAPATA/pitapata-chibi-characters.png": {
+    "alt": "PITAPATA Chibi Characters logo with the white sprout-topped chibi Pita waving and saying hello, on a pale blue background"
+  },
+  "/projects/Products/PITAPATA/pita-chibi-figure.png": {
+    "alt": "Pita, the original PITAPATA chibi figure: a white sprout-topped character waving on a dark green display base"
+  },
+  "/projects/Products/PITAPATA/sugarzoi-kevin-chibi-figure.png": {
+    "alt": "SugarZoi x PITAPATA chibi figure of Kevin in a blue shirt, holding up a SugarZoi logo sign on a brown display base"
+  },
+
+  "/projects/Products/Archive Images/Angular Glasswood Table/Thumbnail_CF (1).jpg": {
+    "title": "Angular Glasswood Table - inZOI Mod by MOOSTYLES",
+    "alt": "Angular Glasswood Table in a sunlit inZOI living room: a rectangular glass top on a faceted dark wood base, holding a teapot tray and a reed diffuser"
+  },
+
+  "/projects/Products/Archive Images/Angular Glasswood Table/Showcase1.jpg": {
+    "title": "Angular Glasswood Table - inZOI Mod by MOOSTYLES",
+    "alt": "Wide view of an inZOI living room with the Angular Glasswood Table between a mustard sofa and a wooden armchair, facing a wall-mounted TV"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "name": "Halo Executive Conference Desk",
+  "slug": "halo-executive-conference-desk",
+  "media": {
+    "banner": "/projects/Mods/halo-executive-conference-desk/Logo_CF.jpg",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/halo-executive-conference-desk/Showcase1.jpg",
+      "/projects/Mods/halo-executive-conference-desk/Showcase2.jpg"
+    ]
+  },
+  "description": "Bring a luxurious corporate look to your workspace meeting areas with the Executive Halo Conference Desk. This sleek modern desk is a counter part to the Halo Executive Series. Perfect for luxury offices, business meeting rooms and professional workspace builds.",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/build-mode/halo-executive-conference-desk-e54dc68d",
+      "date": "2026-10-04T00:39:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/halo-executive-171373413?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [],
+  "collection": "Halo",
+  "tags": [],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "untested",
+    "gameVersion": "inZOI"
+  },
+  "legacyId": "MOD-06",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

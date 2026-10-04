@@ -1,0 +1,38 @@
+{
+  "name": "Halo Executive Desk",
+  "slug": "halo-executive-desk",
+  "media": {
+    "banner": "/projects/Mods/halo-executive-desk/Thumbnail_CF.jpg",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/halo-executive-desk/showcase2.jpg",
+      "/projects/Mods/halo-executive-desk/showcase1.jpg"
+    ]
+  },
+  "description": "Bring a luxury corporate look to your workspace with the Executive Halo Desk. This sleek modern desk features a wide futuristic tabletop, smooth cream and charcoal panels and a bold sculpted base. Perfect for luxury offices, business rooms, modern study rooms, and professional workspace builds.",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/build-mode/halo-executive-desk-194084d5",
+      "date": ""
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/halo-executive-171373235?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [],
+  "collection": "Halo",
+  "tags": [],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "untested",
+    "gameVersion": "inZOI"
+  },
+  "legacyId": "MOD-05",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

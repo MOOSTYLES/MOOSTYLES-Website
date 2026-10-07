@@ -18,7 +18,12 @@
     },
     "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/halo-executive-171373235?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
   },
-  "fileManifest": [],
+  "fileManifest": [
+    {
+      "filename": "Halo Executive Desk",
+      "description": "Bring a luxury corporate look to your workspace with the Executive Halo Desk. This sleek modern desk features a wide futuristic tabletop, smooth cream and charcoal panels and a bold sculpted base. Perfect for luxury offices, business rooms, modern study rooms, and professional workspace builds."
+    }
+  ],
   "collection": "Halo",
   "tags": [],
   "knownIssues": [],

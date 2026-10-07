@@ -108,9 +108,15 @@ collections:
       - label: "Files Included"
         name: fileManifest
         widget: list
+        required: true
         min: 1
+        # Start every new mod with one blank item: its required subfields block
+        # saving until filled in. The site build fails on an empty list.
+        default:
+          - filename: ""
+            description: ""
         summary: "{{fields.filename}}"
-        hint: "What's in the download — at least one entry is required."
+        hint: "What's in the download — at least one entry is required, or the site won't build."
         fields:
           - label: "File / Item Name"
             name: filename

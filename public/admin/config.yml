@@ -20,13 +20,15 @@ collections:
     description: "Add or edit a mod. It appears on the live mod list as soon as you publish."
     folder: "src/content/mods"
     create: true
-    delete: true
+    # Disabled: deleting a mod would renumber the auto-assigned IDs of newer
+    # mods. Retire a mod with Flags → Archive Item instead.
+    delete: false
     slug: "{{slug}}"
     identifier_field: name
     extension: json
     format: json
     summary: "{{name}}"
-    sortable_fields: ["name", "slug"]
+    sortable_fields: ["name", "slug", "dateAdded"]
     fields:
       # --- The essentials: what visitors will actually see ---
       - label: "Mod Name"
@@ -108,9 +110,15 @@ collections:
       - label: "Files Included"
         name: fileManifest
         widget: list
+        required: true
         min: 1
+        # Start every new mod with one blank item: its required subfields block
+        # saving until filled in. The site build fails on an empty list.
+        default:
+          - filename: ""
+            description: ""
         summary: "{{fields.filename}}"
-        hint: "What's in the download — at least one entry is required."
+        hint: "What's in the download — at least one entry is required, or the site won't build."
         fields:
           - label: "File / Item Name"
             name: filename
@@ -169,11 +177,22 @@ collections:
             widget: string
             default: "inZOI"
 
-      - label: "Internal ID"
+      # Read-only: new mods are numbered automatically when the site builds,
+      # after the highest existing ID, in upload order (see src/lib/modIds.js).
+      - label: "Mod ID"
         name: legacyId
         widget: string
         required: false
-        hint: "Optional — a short code for your own reference (e.g. MOD-042). Not shown to visitors. Safe to leave blank."
+        readonly: true
+        hint: "Assigned automatically in upload order (MOD-0001, MOD-0002, …). New mods get theirs when the site builds, so it stays blank here."
+
+      - label: "Upload Date"
+        name: dateAdded
+        widget: datetime
+        required: false
+        picker_utc: true
+        auto_now: [create]
+        hint: "Set automatically the first time the mod is saved."
 
       - label: "Flags"
         name: legacy

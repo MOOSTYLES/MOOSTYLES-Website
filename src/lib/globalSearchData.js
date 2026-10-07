@@ -17,7 +17,7 @@ const getAllProductsForSearch = () => {
     rating: product.rating,
     image: product.image,
     type: 'product',
-    date: product.createdAt || new Date().toISOString(),
+    date: product.createdAt,
     url: `/product/${product.id}`,
     inStock: product.inStock,
     isNew: product.isNew,

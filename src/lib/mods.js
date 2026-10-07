@@ -1,8 +1,11 @@
+import { assignModIds } from "@/lib/modIds";
+import modIdAliases from "@/content/modIdAliases.json";
+
 const modules = import.meta.glob("/src/content/mods/*.json", { eager: true });
 
-const allMods = Object.values(modules)
-  .map((mod) => mod.default ?? mod)
-  .sort((a, b) => a.name.localeCompare(b.name));
+const allMods = assignModIds(Object.values(modules).map((mod) => mod.default ?? mod)).sort(
+  (a, b) => a.name.localeCompare(b.name)
+);
 
 for (const mod of allMods) {
   if (!Array.isArray(mod.fileManifest) || mod.fileManifest.length === 0) {
@@ -12,6 +15,12 @@ for (const mod of allMods) {
 
 const bySlug = new Map(allMods.map((mod) => [mod.slug, mod]));
 const byLegacyId = new Map(allMods.map((mod) => [mod.legacyId, mod]));
+
+// IDs from before the 2026-10 renumbering (e.g. archive-017, MOD-01), so old
+// links and saved-mod cookies still resolve.
+for (const [oldId, newId] of Object.entries(modIdAliases)) {
+  if (byLegacyId.has(newId)) byLegacyId.set(oldId, byLegacyId.get(newId));
+}
 
 export const getAllMods = () => allMods;
 

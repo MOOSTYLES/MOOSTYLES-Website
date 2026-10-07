@@ -35,7 +35,8 @@
     "compatibility": "untested",
     "gameVersion": "inZOI"
   },
-  "legacyId": "MOD-06",
+  "legacyId": "MOD-0032",
+  "dateAdded": "2026-08-03T10:16:49Z",
   "legacy": {
     "isArchiveItem": false,
     "isNew": true

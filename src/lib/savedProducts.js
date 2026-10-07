@@ -35,7 +35,18 @@ function loadRawSaved() {
     const raw = getCookie(STORAGE_KEY);
     if (!raw) return [];
     const parsed = JSON.parse(raw);
-    return Array.isArray(parsed) ? parsed : [];
+    if (!Array.isArray(parsed)) return [];
+    // Entries saved under a pre-renumbering ID (e.g. archive-017) are rewritten
+    // to the mod's current ID, so the heart toggle and unsave match them again.
+    let migrated = false;
+    const entries = parsed.map((entry) => {
+      const currentId = getProductById(entry.id)?.id;
+      if (!currentId || currentId === entry.id) return entry;
+      migrated = true;
+      return { ...entry, id: currentId };
+    });
+    if (migrated) saveRawSaved(entries);
+    return entries;
   } catch (e) {
     console.error('Error parsing saved products cookie:', e);
     return [];

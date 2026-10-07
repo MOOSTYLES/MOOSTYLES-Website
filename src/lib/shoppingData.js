@@ -22,6 +22,7 @@ const toLegacyProduct = (mod) => {
     patreonlink: patreonLink,
     patreonLink,
     howToUse: (mod.installation || []).join("\n\n"),
+    createdAt: mod.dateAdded || null,
   };
 };
 

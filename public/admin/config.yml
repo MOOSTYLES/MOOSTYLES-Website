@@ -17,7 +17,7 @@ collections:
   - name: mods
     label: "Mods"
     label_singular: "Mod"
-    description: "Add or edit a mod. It appears on the live mod list as soon as you publish."
+    description: "Publish a mod to My Mod List, or set Collection / Brand to ARDENNE for the ARDENNE listing."
     folder: "src/content/mods"
     create: true
     # Disabled: deleting a mod would renumber the auto-assigned IDs of newer
@@ -132,7 +132,7 @@ collections:
         name: collection
         widget: string
         required: false
-        hint: "Leave blank for a standalone mod. Fill in to group several mods under one brand (e.g. MOCA)."
+        hint: "Set to ARDENNE to publish on the ARDENNE listing instead of My Mod List. Leave blank for a standalone mod, or use another brand (e.g. MOCA) for My Mod List."
 
       - label: "Tags"
         name: tags
@@ -140,6 +140,7 @@ collections:
         required: false
         collapsed: true
         field: { label: "Tag", name: item, widget: string }
+        hint: "For ARDENNE, add Automobiles or Yachts to label and filter the mod correctly. Private Aviation is currently hidden; uploads with aviation tags stay stored until that category is enabled. Other descriptive tags are welcome. Without a category tag, the mod appears under All ARDENNE mods as Uncategorised."
 
       - label: "Known Issues"
         name: knownIssues

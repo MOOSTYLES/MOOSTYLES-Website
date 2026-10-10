@@ -1,16 +1,27 @@
 import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink, useLocation, useNavigationType } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import SearchQuery from "@/Components/SearchQuery";
 import { getGlobalSearchData } from "@/lib/globalSearchData";
 import { NavMenuPanel } from "@/Components/Navbar/NavMenuPanel";
+import { getSiteIdentity } from "@/lib/siteIdentity";
+import { ARDENNE_LOGOS } from "@/content/ardenne";
 
 const MotionLink = motion.create(Link);
 const TAP_TRANSITION = { type: "spring", stiffness: 400, damping: 17 };
 
 export const NavigationBar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const { pathname, state, key } = useLocation();
+  const navigationType = useNavigationType();
+  const inArdenne = getSiteIdentity(pathname) === "ardenne";
+  const catalogLabel = inArdenne ? "MOOSTYLES" : "ARDENNE";
+  const previousCatalogLabel = inArdenne ? "ARDENNE" : "MOOSTYLES";
+  // Link state carries the old word across page mounts; POP skips reloads and history visits.
+  const morphFrom = navigationType === "PUSH" && state?.catalogWordmarkFrom === previousCatalogLabel
+    ? previousCatalogLabel
+    : null;
 
   useEffect(() => {
     if (!isOpen) return undefined;
@@ -29,23 +40,44 @@ export const NavigationBar = () => {
     <nav className="site-nav">
       <div className="site-nav__bar">
         <MotionLink
-          to="/"
+          to={inArdenne ? "/ardenne" : "/"}
           className="nav-icon-button site-nav__home"
-          aria-label="MOOSTYLES home"
+          aria-label={inArdenne ? "ARDENNE home" : "MOOSTYLES home"}
           whileHover={{ y: -1 }}
           whileTap={{ scale: 0.95 }}
           transition={TAP_TRANSITION}
         >
           <img
-            src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"
+            src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"}
             alt=""
             className="site-nav__home-logo"
           />
         </MotionLink>
 
         <div className="site-nav__actions">
+          <div className="site-nav__catalogs" aria-label="Mod catalogs">
+            <NavLink to="/mods" className={({ isActive }) => `site-nav__catalog-link${isActive && !inArdenne ? " site-nav__catalog-link--active" : ""}`}>
+              My Mod List
+            </NavLink>
+            <Link
+              to={inArdenne ? "/" : "/ardenne"}
+              state={{ catalogWordmarkFrom: catalogLabel }}
+              className="site-nav__catalog-link"
+            >
+              {morphFrom ? (
+                <>
+                  <span className="sr-only">{catalogLabel}</span>
+                  <span key={key} className="site-nav__wordmark" aria-hidden="true">
+                    <span className="site-nav__wordmark-from">{morphFrom}</span>
+                    <span className="site-nav__wordmark-to">{catalogLabel}</span>
+                  </span>
+                </>
+              ) : catalogLabel}
+            </Link>
+          </div>
           <SearchQuery
             iconOnly
+            className="site-nav__search"
             placeholder="Search mods, collections, pages..."
             searchData={getGlobalSearchData()}
             onSearchSelect={handleSearchSelect}
@@ -54,7 +86,7 @@ export const NavigationBar = () => {
 
           <motion.button
             type="button"
-            className="nav-icon-button"
+            className="nav-icon-button site-nav__menu-toggle"
             aria-label={isOpen ? "Close menu" : "Open menu"}
             aria-expanded={isOpen}
             onClick={() => setIsOpen((open) => !open)}

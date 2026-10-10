@@ -13,9 +13,13 @@ import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 import { getModByAnyId, getRelatedMods } from "@/lib/mods";
 import { DEFAULT_MOD_TABS } from "@/lib/modDetailTabs";
 import { ProductCard } from "@/Components/ProductCard";
+import { ArdenneModCard } from "@/Components/ardenne/ArdenneModCard";
+import { getArdenneCategories, getModListingPath, isArdenneMod } from "@/lib/modCatalog";
+import { getModMetadata } from "@/lib/seo";
 
 const toLegacyCard = (mod) => ({
   id: mod.legacyId,
+  slug: mod.slug,
   name: mod.name,
   brand: mod.collection ? "Collections" : "Individual",
   image: mod.media.banner,
@@ -34,7 +38,11 @@ export const ModDetail = () => {
       <div className="min-h-screen">
         <WebsiteBackground />
         <NavigationBar />
-        <Metadata pageTitle="Mod Not Found | MOOSTYLES" noindex />
+        <Metadata
+          pageTitle="Mod Not Found | MOOSTYLES"
+          pageDescription="This inZOI mod could not be found. Browse MOOSTYLES collections, previews and download options."
+          noindex
+        />
         <div className="max-w-3xl mx-auto px-4 py-16 text-center">
           <h1 className="text-2xl font-bold text-gray-900 mb-4">Mod Not Found</h1>
           <p className="text-gray-600 mb-6">
@@ -53,33 +61,25 @@ export const ModDetail = () => {
   const isSectionVisible = (sectionId) => activeTabDef.sectionIds.includes(sectionId);
 
   const relatedMods = getRelatedMods(mod.slug, 4);
+  const ardenneCategories = getArdenneCategories(mod);
+  const ardenne = isArdenneMod(mod);
+  const pageBrand = ardenne ? "ARDENNE" : "MOOSTYLES";
 
   return (
-    <div className="min-h-screen">
-      <Metadata
-        pageTitle={`${mod.name} | MOOSTYLES`}
-        pageDescription={mod.description}
-        ogTitle={`${mod.name} | MOOSTYLES`}
-        ogDescription={mod.description}
-        ogImage={mod.media.banner}
-        ogType="product"
-        canonical={`/mods/${mod.slug}`}
-        keywords={`${mod.name}, ${mod.collection || "inZOI mods"}, ${mod.tags.join(", ")}, MOOSTYLES`}
-        product={{
-          id: mod.legacyId,
-          name: mod.name,
-          description: mod.description,
-          image: mod.media.banner || "",
-          brand: mod.collection ? "Collections" : "Individual",
-          category: mod.legacy.isArchiveItem ? "archive" : "inZOI",
-        }}
-      />
+    <div className={`min-h-screen${ardenne ? " ardenne-page ardenne-detail" : ""}`}>
+      <Metadata {...getModMetadata(mod)} />
 
-      <WebsiteBackground />
+      {!ardenne && <WebsiteBackground />}
       <NavigationBar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <Breadcrumb to="/mods" label="All Mods" />
+      <main id="main-content" className={ardenne ? "ardenne-main ardenne-detail__main" : "max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8"}>
+        <Breadcrumb to={getModListingPath(mod)} label={isArdenneMod(mod) ? "ARDENNE Collection" : "My Mod List"} />
+
+        {isArdenneMod(mod) && (
+          <p className="ardenne-mod-label">
+            ARDENNE{ardenneCategories.length > 0 ? ` / ${ardenneCategories.map((category) => category.label).join(" / ")}` : ""}
+          </p>
+        )}
 
         <h1 className="mod-detail__title newdesign-heading newdesign-brand-label">{mod.name}</h1>
 
@@ -168,16 +168,16 @@ export const ModDetail = () => {
         {relatedMods.length > 0 && (
           <div className="mod-detail__related">
             <h2 className="mod-detail__section-heading">You Might Also Like</h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className={ardenne ? "ardenne-mod-grid" : "grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"}>
               {relatedMods.map((related) => (
-                <ProductCard key={related.slug} product={toLegacyCard(related)} />
+                ardenne ? <ArdenneModCard key={related.slug} mod={related} /> : <ProductCard key={related.slug} product={toLegacyCard(related)} />
               ))}
             </div>
           </div>
         )}
       </main>
 
-      <Footer />
+      <Footer brand={pageBrand} />
     </div>
   );
 };

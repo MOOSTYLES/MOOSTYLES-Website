@@ -25,7 +25,11 @@ export const ModDownload = () => {
   if (!mod) {
     return (
       <div className="min-h-screen">
-        <Metadata pageTitle="Mod Not Found | MOOSTYLES" noindex />
+        <Metadata
+          pageTitle="Mod Not Found | MOOSTYLES"
+          pageDescription="This inZOI mod could not be found. Browse MOOSTYLES collections, previews and download options."
+          noindex
+        />
         <WebsiteBackground />
         <NavigationBar />
         <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -42,7 +46,11 @@ export const ModDownload = () => {
   if (!canDownload) {
     return (
       <div className="min-h-screen">
-        <Metadata pageTitle={`${mod.name} Download Unavailable | MOOSTYLES`} noindex />
+        <Metadata
+          pageTitle={`${mod.name} Download Unavailable | MOOSTYLES`}
+          pageDescription={`${mod.name} does not currently have an available public download. Visit its inZOI mod page for release details and download options.`}
+          noindex
+        />
         <WebsiteBackground />
         <NavigationBar />
         <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -63,7 +71,11 @@ export const ModDownload = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata pageTitle={`Downloading ${mod.name} | MOOSTYLES`} noindex />
+      <Metadata
+        pageTitle={`Downloading ${mod.name} | MOOSTYLES`}
+        pageDescription={`Opening the public download page for ${mod.name}, an inZOI mod from MOOSTYLES.`}
+        noindex
+      />
       <WebsiteBackground />
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <p className="mod-detail__description">Redirecting to the {mod.name} download...</p>

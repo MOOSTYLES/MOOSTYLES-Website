@@ -497,11 +497,7 @@ export const TermsOfService = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Terms of Service | MOOSTYLES"
-        pageDescription="Terms of Service for MOOSTYLES - Legal terms and conditions for using our services."
-        canonical="/terms-of-service"
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

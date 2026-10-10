@@ -1,14 +1,14 @@
 import { Link } from "react-router-dom";
 import InZOIMods from "@/Components/InZOIMods";
-import { getAllMods } from "@/lib/mods";
+import { getStandardMods } from "@/lib/mods";
 
 export const ModListSection = () => {
-  const mods = getAllMods().slice(0, 5);
+  const mods = getStandardMods().slice(0, 5);
   if (!mods.length) return null;
 
   return (
     <section className="mod-list-section">
-      <h1 className="mod-list-section__heading">Mod List</h1>
+      <h1 className="mod-list-section__heading">My Mod List</h1>
       <div className="mod-list-section__grid">
         {mods.map((mod) => (
           <InZOIMods

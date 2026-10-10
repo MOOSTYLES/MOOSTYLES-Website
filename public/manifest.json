@@ -1,7 +1,7 @@
 {
-  "name": "MOOSTYLES - InZOI Mods",
+  "name": "MOOSTYLES - inZOI Custom Content & Inspiration",
   "short_name": "MOOSTYLES",
-  "description": "Browse free InZOI mods, archive builds, and creator updates from MOOSTYLES.",
+  "description": "Explore inZOI furniture, decor, build inspiration, screenshots and guides from MOOSTYLES, alongside the ARDENNE automobile and yacht collection.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",
@@ -35,10 +35,10 @@
   ],
   "shortcuts": [
     {
-      "name": "InZOI Mods",
+      "name": "My Mod List",
       "short_name": "Mods",
-      "description": "Browse InZOI mods and downloads",
-      "url": "/brands",
+      "description": "Browse inZOI furniture, decor and custom content",
+      "url": "/mods",
       "icons": [
         {
           "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
@@ -47,30 +47,42 @@
       ]
     },
     {
-      "name": "Support",
+      "name": "ARDENNE Collection",
+      "short_name": "ARDENNE",
+      "description": "Explore ARDENNE automobile and yacht mods for inZOI",
+      "url": "/ardenne",
+      "icons": [
+        {
+          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "inZOI Gallery",
+      "short_name": "Gallery",
+      "description": "Find in-game screenshots and build inspiration",
+      "url": "/gallery",
+      "icons": [
+        {
+          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "inZOI Modding Guides",
+      "short_name": "Guides",
+      "description": "Learn installation, troubleshooting and download safety",
+      "url": "/guides"
+    },
+    {
+      "name": "Support & FAQ",
       "short_name": "Support",
-      "description": "Get help and mod support",
-      "url": "/support",
-      "icons": [
-        {
-          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
-          "sizes": "96x96"
-        }
-      ]
-    },
-    {
-      "name": "FAQ",
-      "short_name": "FAQ",
-      "description": "Common questions and answers",
-      "url": "/common-questions",
-      "icons": [
-        {
-          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
-          "sizes": "96x96"
-        }
-      ]
+      "description": "Get help with MOOSTYLES mods and downloads",
+      "url": "/support"
     }
   ],
   "related_applications": [],
   "prefer_related_applications": false
-} 
+}

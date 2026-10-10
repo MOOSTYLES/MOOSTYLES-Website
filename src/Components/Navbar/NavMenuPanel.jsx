@@ -3,10 +3,13 @@ import { Instagram, Gamepad2, MessageCircle, Hash, ArrowRight } from "lucide-rea
 import { SafeModeToggle } from "./SafeModeToggle";
 import { NavIconButton } from "./NavIconButton";
 import { PATREON_MEMBERSHIP_URL } from "@/lib/config";
+import { getSiteIdentity } from "@/lib/siteIdentity";
+import { ARDENNE_LOGOS } from "@/content/ardenne";
 
 const NAV_LINKS = [
   { label: "Home", to: "/" },
-  { label: "Mod List", to: "/mods" },
+  { label: "My Mod List", to: "/mods" },
+  { label: "ARDENNE", to: "/ardenne" },
   { label: "Guides", to: "/guides" },
   { label: "Saved Items", to: "/saved-products" },
   { label: "Support", to: "/support" },
@@ -32,16 +35,17 @@ const isLinkActive = (to, pathname) => {
 
 export const NavMenuPanel = ({ onNavigate }) => {
   const { pathname } = useLocation();
+  const inArdenne = getSiteIdentity(pathname) === "ardenne";
 
   return (
     <div className="nav-menu">
-      <Link to="/" className="nav-menu__brand" onClick={onNavigate}>
+      <Link to={inArdenne ? "/ardenne" : "/"} className="nav-menu__brand" onClick={onNavigate}>
         <img
-          src="/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png"
+          src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png"}
           alt=""
           className="nav-menu__brand-logo"
         />
-        <span className="nav-menu__brand-label">MOOSTYLES</span>
+        <span className="nav-menu__brand-label">{inArdenne ? "ARDENNE" : "MOOSTYLES"}</span>
       </Link>
 
       <nav className="nav-menu__links" aria-label="Primary">

@@ -5,11 +5,7 @@ import { Metadata } from "@/Components/Metadata.jsx";
 export const Offline = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Page Offline | MOOSTYLES"
-        pageDescription="This page is temporarily offline."
-        noindex
-      />
+      <Metadata />
       <WebsiteBackground />
       <div className="flex items-center justify-center min-h-screen px-4">
         <div className="max-w-md w-full text-center">

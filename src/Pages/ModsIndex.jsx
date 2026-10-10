@@ -4,7 +4,7 @@ import { Footer } from "@/Components/Footer";
 import { WebsiteBackground } from "@/Components/WebsiteBackground";
 import { Metadata } from "@/Components/Metadata.jsx";
 import { ProductCard } from "@/Components/ProductCard";
-import { getAllMods } from "@/lib/mods";
+import { getStandardMods } from "@/lib/mods";
 
 const toLegacyCard = (mod) => ({
   id: mod.legacyId,
@@ -19,7 +19,7 @@ export const ModsIndex = () => {
   const [query, setQuery] = useState("");
   const [filterValue, setFilterValue] = useState("");
 
-  const allMods = useMemo(() => getAllMods(), []);
+  const allMods = useMemo(() => getStandardMods(), []);
 
   const filtered = useMemo(() => {
     let list = allMods.filter((mod) => {
@@ -41,18 +41,14 @@ export const ModsIndex = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="All Mods | MOOSTYLES"
-        pageDescription="Browse every InZOI mod available on MOOSTYLES, filterable by collection."
-        canonical="/mods"
-      />
+      <Metadata listingItems={filtered.map((mod) => ({ name: mod.name, url: `/mods/${mod.slug}` }))} />
 
       <WebsiteBackground />
       <NavigationBar />
 
-      <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <main id="main-content" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <h1 className="mod-detail__title mods-index__title newdesign-heading newdesign-brand-label">
-          All Mods
+          My Mod List
         </h1>
 
         <div className="mods-index__filters">

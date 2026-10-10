@@ -1,7 +1,8 @@
 import { ArrowUp } from "lucide-react";
 import { motion } from "framer-motion";
+import { ARDENNE_LOGOS } from "@/content/ardenne";
 
-export const Footer = () => {
+export const Footer = ({ brand = "MOOSTYLES" }) => {
 
   const scrollToTop = () => {
     window.scrollTo({
@@ -70,14 +71,15 @@ export const Footer = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-4 sm:mb-6">
             <img
-              src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"
-              alt="MOOSTYLES Logo"
+              src={brand === "ARDENNE" ? ARDENNE_LOGOS.white : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"}
+              alt={`${brand} Logo`}
               className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 mx-auto object-contain"
             />
           </div>
-          <h2 className="text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black tracking-tight">
-            MOOSTYLES
+          <h2 className={`text-base sm:text-lg md:text-2xl lg:text-3xl xl:text-4xl font-bold text-black tracking-tight${brand === "ARDENNE" ? " ardenne-footer__wordmark" : ""}`}>
+            {brand}
           </h2>
+          {brand === "ARDENNE" && <p className="ardenne-footer__parent">A collection by MOOSTYLES</p>}
         </div>
       </div>
 

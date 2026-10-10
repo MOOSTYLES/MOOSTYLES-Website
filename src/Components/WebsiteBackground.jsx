@@ -6,7 +6,7 @@ export const WebsiteBackground = ({
   lineThickness = 1,
   lineColor = 'rgba(0, 0, 0, 0.12)',
 
-  glowColor = 'rgb(168, 255, 242)',
+  glowColor = '#a8fff2',
   glowSize = 400,
 
   followSpeed = 0.08,

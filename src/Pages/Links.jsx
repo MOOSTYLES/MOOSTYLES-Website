@@ -51,10 +51,7 @@ export const Links = () => {
 
   return (
     <>
-      <Metadata
-        pageTitle="Links - MOOSTYLES"
-        pageDescription="Connect with MOOSTYLES on social media and support platforms"
-      />
+      <Metadata />
 
       <div className="min-h-screen">
         <WebsiteBackground />

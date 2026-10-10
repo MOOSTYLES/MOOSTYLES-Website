@@ -1,17 +1,34 @@
 import { assignModIds } from "@/lib/modIds";
 import modIdAliases from "@/content/modIdAliases.json";
+import { getModsForCatalog, isArdenneMod, isModPublished } from "@/lib/modCatalog";
 
 const modules = import.meta.glob("/src/content/mods/*.json", { eager: true });
 
-const allMods = assignModIds(Object.values(modules).map((mod) => mod.default ?? mod)).sort(
+// Sveltia can omit optional lists. Give every consumer the same shape without
+// changing the uploaded JSON or the mod's stored ID.
+export const normalizeMod = (mod) => ({
+  ...mod,
+  tags: mod.tags ?? [],
+  media: {
+    ...mod.media,
+    previews: mod.media?.previews ?? [],
+    screenshots: mod.media?.screenshots ?? [],
+  },
+  legacy: { isArchiveItem: false, isNew: true, ...mod.legacy },
+});
+
+const storedMods = assignModIds(Object.values(modules).map((mod) => normalizeMod(mod.default ?? mod))).sort(
   (a, b) => a.name.localeCompare(b.name)
 );
 
-for (const mod of allMods) {
+for (const mod of storedMods) {
   if (!Array.isArray(mod.fileManifest) || mod.fileManifest.length === 0) {
     throw new Error(`Mod "${mod.slug}" has an empty fileManifest.`);
   }
 }
+
+// Assign IDs before filtering so enabling a category later doesn't renumber mods.
+const allMods = storedMods.filter(isModPublished);
 
 const bySlug = new Map(allMods.map((mod) => [mod.slug, mod]));
 const byLegacyId = new Map(allMods.map((mod) => [mod.legacyId, mod]));
@@ -23,6 +40,10 @@ for (const [oldId, newId] of Object.entries(modIdAliases)) {
 }
 
 export const getAllMods = () => allMods;
+
+export const getStandardMods = () => getModsForCatalog(allMods, "standard");
+
+export const getArdenneMods = () => getModsForCatalog(allMods, "ardenne");
 
 export const getActiveMods = () => allMods.filter((mod) => !mod.legacy.isArchiveItem);
 
@@ -48,7 +69,8 @@ export const getRelatedMods = (slug, limit = 4) => {
     .filter(
       (other) =>
         other.slug !== mod.slug &&
-        (other.tags.some((tag) => mod.tags.includes(tag)) ||
+        isArdenneMod(other) === isArdenneMod(mod) &&
+        ((other.tags ?? []).some((tag) => (mod.tags ?? []).includes(tag)) ||
           (mod.collection && other.collection === mod.collection))
     )
     .slice(0, limit);

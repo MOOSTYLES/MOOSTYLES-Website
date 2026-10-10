@@ -33,11 +33,7 @@ const GUIDES = [
 export const GuidesIndex = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Modding Guides | MOOSTYLES"
-        pageDescription="Practical guides for installing, troubleshooting, and safely using inZOI mods, covering installation, common problems, and file safety."
-        canonical="/guides"
-      />
+      <Metadata listingItems={GUIDES.map((guide) => ({ name: guide.title, url: `/guides/${guide.slug}` }))} />
 
       <WebsiteBackground />
       <NavigationBar />
@@ -51,7 +47,7 @@ export const GuidesIndex = () => {
         <p className="support-page__intro">
           Everything on this site is free to download, but a mod is only as useful as your ability to install
           it, keep it working, and know it's safe. These guides cover the parts that don't fit on a single
-          mod page, written from the questions we actually get asked, not boilerplate.
+          mod page, written from the questions we actually get asked.
         </p>
 
         <div className="guides-index__grid">

@@ -8,12 +8,7 @@ import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 export const InstallingMods = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="How to Install inZOI Mods Safely | MOOSTYLES"
-        pageDescription="A practical walkthrough of installing inZOI mods through CurseForge or Patreon, finding new pieces in Build Mode, and avoiding the most common install mistakes."
-        canonical="/guides/installing-mods"
-        article={{ title: "How to Install inZOI Mods Safely" }}
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

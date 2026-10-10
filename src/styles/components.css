@@ -36,6 +36,19 @@
   transform: translateY(-2px);
 }
 
+/* Keep thumbnail artwork out of the title area; fade only above the caption. */
+.product-card__caption { background: #fff; }
+.product-card__caption::before {
+  content: "";
+  position: absolute;
+  bottom: 100%;
+  left: 0;
+  right: 0;
+  height: 32px;
+  background: linear-gradient(to top, #fff, rgba(255, 255, 255, 0));
+  pointer-events: none;
+}
+
 /* ========================================
    HERO BANNER / PROMOTIONAL CAROUSEL
    ======================================== */

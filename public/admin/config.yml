@@ -171,21 +171,22 @@ collections:
           - label: "Compatibility"
             name: compatibility
             widget: select
-            options: ["untested", "compatible", "needs-update", "broken"]
+            options:
+              - { label: "Working", value: "working" }
+              - { label: "Untested", value: "untested" }
+              - { label: "Compatible", value: "compatible" }
+              - { label: "Needs Update", value: "needs-update" }
+              - { label: "Broken", value: "broken" }
             default: "untested"
           - label: "Game Version"
             name: gameVersion
             widget: string
             default: "inZOI"
 
-      # Read-only: new mods are numbered automatically when the site builds,
-      # after the highest existing ID, in upload order (see src/lib/modIds.js).
-      - label: "Mod ID"
-        name: legacyId
-        widget: string
-        required: false
-        readonly: true
-        hint: "Assigned automatically in upload order (MOD-0001, MOD-0002, …). New mods get theirs when the site builds, so it stays blank here."
+      # Preserve stored IDs without showing a form field. New mods are numbered
+      # automatically when the site builds (see src/lib/modIds.js).
+      - name: legacyId
+        widget: hidden
 
       - label: "Upload Date"
         name: dateAdded

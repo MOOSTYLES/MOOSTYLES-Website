@@ -122,7 +122,7 @@ export const ProductCard = ({ product, onToggleFavorite }) => {
             </button>
           </div>
 
-          <div className="absolute bottom-0 left-0 right-0 p-2 sm:p-4 bg-gradient-to-t from-white via-white/90 to-transparent">
+          <div className="product-card__caption absolute bottom-0 left-0 right-0 p-2 sm:p-4">
             <div className="flex items-center gap-1 mb-1 sm:mb-2">
               <User size={10} className="text-gray-600 sm:w-3 sm:h-3" />
               <p className="text-xs text-gray-600 truncate">{product.author || product.brand}</p>

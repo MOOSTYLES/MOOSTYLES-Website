@@ -1,0 +1,43 @@
+{
+  "name": "TZL Air Condition",
+  "slug": "tzl-air-condition",
+  "media": {
+    "banner": "/projects/Mods/tzl-air-condition/Thumbnail_CF.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/tzl-air-condition/showcase2.jpg"
+    ]
+  },
+  "description": "The first modern and compact versions of the TZL Air Conditioning units. First of it's kind but not the last! Fully functional and cools the air, bringing satisfaction to your Zoi's mood. Now support colors!",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/build-mode/tzl-air-condition-f19746b9",
+      "date": "2026-10-09T19:16:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/tzl-air-171932051?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "TZL Air Condition",
+      "description": "The first modern and compact versions of the TZL Air Conditioning units. First of it's kind but not the last! Fully functional and cools the air, bringing satisfaction to your Zoi's mood. Now support colors!"
+    }
+  ],
+  "collection": "TZL",
+  "tags": [],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "untested",
+    "gameVersion": "inZOI"
+  },
+  "legacyId": "",
+  "dateAdded": "2026-10-10T00:19:43Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

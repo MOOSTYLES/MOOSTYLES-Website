@@ -41,11 +41,7 @@ const values = [
 const AboutMe = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="About MooCalf | MOOSTYLES"
-        pageDescription="Meet MooCalf, the creator behind MOOSTYLES, free InZOI mods, brand packs, and modding resources."
-        canonical="/about"
-      />
+      <Metadata />
       <WebsiteBackground />
       <NavigationBar />
 

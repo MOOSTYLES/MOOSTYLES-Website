@@ -1,4 +1,5 @@
 import { getAllProducts } from './shoppingData.js';
+import { LIVE_ARDENNE_CATEGORIES, ARDENNE_PUBLIC_COPY } from '../content/ardenne.js';
 
 const getAllProductsForSearch = () => {
   const products = getAllProducts();
@@ -57,8 +58,8 @@ const getStaticPages = () => [
     image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
   },
   {
-    id: 'brands',
-    title: 'InZOI Mods',
+    id: 'mods',
+    title: 'My Mod List',
     description: 'Browse and download InZOI mods',
     content: 'Explore our collection of InZOI mods including custom brands, items, and content. Each mod is carefully crafted to enhance your InZOI experience.',
     excerpt: 'Browse and download InZOI mods',
@@ -68,8 +69,30 @@ const getStaticPages = () => [
     author: 'MOOSTYLES',
     type: 'page',
     date: new Date().toISOString(),
-    url: '/brands',
+    url: '/mods',
     image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+  },
+  {
+    id: 'ardenne',
+    title: 'ARDENNE',
+    description: `${ARDENNE_PUBLIC_COPY.worlds} An inZOI collection by MOOSTYLES.`,
+    content: `Explore the ARDENNE collection of ${ARDENNE_PUBLIC_COPY.categories} mods.`,
+    category: 'pages',
+    tags: ['ardenne', ...LIVE_ARDENNE_CATEGORIES.map((category) => category.label.toLowerCase()), 'collection'],
+    type: 'page',
+    url: '/ardenne',
+    image: '/projects/ARDENNE/automobile.webp'
+  },
+  {
+    id: 'ardenne-mods',
+    title: 'ARDENNE Collection',
+    description: 'Browse ARDENNE mods by category.',
+    content: `Find ${ARDENNE_PUBLIC_COPY.categories} mods in the ARDENNE listing.`,
+    category: 'pages',
+    tags: ['ardenne', 'mods', ...LIVE_ARDENNE_CATEGORIES.map((category) => category.label.toLowerCase()), 'downloads'],
+    type: 'page',
+    url: '/ardenne/mods',
+    image: '/projects/ARDENNE/yacht.webp'
   },
   {
     id: 'saved-products',

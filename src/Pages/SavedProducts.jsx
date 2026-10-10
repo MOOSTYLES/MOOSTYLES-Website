@@ -50,11 +50,7 @@ export const SavedProducts = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Saved Items | MOOSTYLES"
-        pageDescription="Mods you've saved for later on MOOSTYLES."
-        noindex
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

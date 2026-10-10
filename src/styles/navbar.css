@@ -27,6 +27,109 @@
   gap: var(--space-2);
 }
 
+.site-nav__catalogs {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.site-nav__catalog-link {
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  color: #14191b;
+  background: #ffffff;
+  font-size: var(--font-size-1);
+  font-weight: 600;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.site-nav__catalog-link:hover,
+.site-nav__catalog-link--active {
+  color: var(--color-accent-hover);
+  background: #e6f5f2;
+}
+
+.site-nav__catalog-link:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.site-nav__wordmark {
+  display: inline-grid;
+  color: inherit;
+}
+
+.site-nav__wordmark-from,
+.site-nav__wordmark-to {
+  grid-area: 1 / 1;
+  color: inherit;
+  transform-origin: left center;
+  animation-duration: 0.8s;
+  animation-fill-mode: both;
+}
+
+.site-nav__wordmark-from {
+  animation-name: nav-wordmark-out;
+}
+
+.site-nav__wordmark-to {
+  animation-name: nav-wordmark-in;
+}
+
+@keyframes nav-wordmark-out {
+  0%, 15% { opacity: 1; filter: blur(0); transform: scaleX(1); }
+  65%, 100% { opacity: 0; filter: blur(4px); transform: scaleX(1.12); }
+}
+
+@keyframes nav-wordmark-in {
+  0%, 15% { opacity: 0; filter: blur(4px); transform: scaleX(0.88); }
+  80%, 100% { opacity: 1; filter: blur(0); transform: scaleX(1); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .site-nav__wordmark-from {
+    display: none;
+  }
+
+  .site-nav__wordmark-to {
+    animation: none;
+  }
+}
+
+@media (max-width: 760px) {
+  .site-nav__search:has(input) {
+    position: absolute;
+    top: calc(100% + var(--space-1));
+    left: var(--space-3);
+    right: var(--space-3);
+  }
+}
+
+@media (max-width: 480px) {
+  .site-nav__bar {
+    padding: var(--space-2);
+  }
+
+  .site-nav__catalogs,
+  .site-nav__actions {
+    gap: var(--space-1);
+  }
+
+  .site-nav__catalog-link {
+    padding: var(--space-2);
+    font-size: 12px;
+  }
+
+  .site-nav__home,
+  .site-nav__actions > .nav-icon-button,
+  .site-nav__actions .nav-primary-icon {
+    width: 40px;
+    height: 40px;
+  }
+}
+
 .nav-icon-button.site-nav__home {
   box-shadow: none;
 }
@@ -36,6 +139,8 @@
   height: 32px;
   object-fit: contain;
 }
+
+.site-nav__menu-toggle { position: relative; z-index: 45; }
 
 /* ========================================
    ICON BUTTON

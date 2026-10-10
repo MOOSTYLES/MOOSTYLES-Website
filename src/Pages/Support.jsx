@@ -113,11 +113,7 @@ export const Support = () => {
 
   return (
     <>
-      <Metadata
-        pageTitle="Support | MOOSTYLES"
-        pageDescription="Get help with downloads, technical issues, or general questions about MOOSTYLES mods."
-        canonical="/support"
-      />
+      <Metadata faqItems={faqCategories.flatMap((category) => category.questions)} />
 
       <div className="min-h-screen">
         <WebsiteBackground />

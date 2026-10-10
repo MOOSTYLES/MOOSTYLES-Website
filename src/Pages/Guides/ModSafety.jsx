@@ -8,12 +8,7 @@ import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 export const ModSafety = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Modding Safety & File Verification | MOOSTYLES"
-        pageDescription="How to tell a safe mod download from a risky one, where MOOSTYLES mods are actually distributed, and general file-safety habits for any modding community."
-        canonical="/guides/mod-safety"
-        article={{ title: "Modding Safety & File Verification" }}
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

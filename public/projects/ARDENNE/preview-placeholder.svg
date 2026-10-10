@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="600" viewBox="0 0 900 600">
+  <rect width="900" height="600" fill="#e9eeeb"/>
+  <path d="M390 280h120" stroke="#3d665f" stroke-width="1"/>
+  <text x="450" y="245" text-anchor="middle" fill="#19211e" font-family="monospace" font-size="26" letter-spacing="6">ARDENNE</text>
+  <text x="450" y="326" text-anchor="middle" fill="#626e68" font-family="monospace" font-size="16">Preview unavailable</text>
+</svg>

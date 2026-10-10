@@ -2,26 +2,16 @@ import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { SITE_URL } from '../src/lib/config.js';
+import { splitHoistedHead } from '../src/lib/seo.js';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const distDir = path.join(root, 'dist');
 const ssrEntry = path.join(root, 'dist-ssr', 'entry-server.js');
 
-const { render, getStaticRoutes, getRouteImages } = await import(pathToFileURL(ssrEntry).href);
+const { render, getStaticRoutes, getCanonicalRoutes, getRouteImages } = await import(pathToFileURL(ssrEntry).href);
 
 const template = fs.readFileSync(path.join(distDir, 'index.html'), 'utf-8');
-
-const helmetToHead = (helmet) =>
-  [helmet.title, helmet.meta, helmet.link, helmet.script]
-    .map((tag) => tag.toString())
-    .join('\n');
-
-const splitLeadingPreloadLinks = (html) => {
-  const match = html.match(/^(?:<link[^>]*\/>)+/);
-  if (!match) return { links: '', rest: html };
-  return { links: match[0], rest: html.slice(match[0].length) };
-};
 
 const writeRoute = (routePath, html) => {
   const outDir =
@@ -31,10 +21,9 @@ const writeRoute = (routePath, html) => {
 };
 
 const renderPage = (routePath) => {
-  const { appHtml, helmet } = render(routePath);
-  const { links, rest } = splitLeadingPreloadLinks(appHtml);
-  const head = helmetToHead(helmet) + (links ? '\n' + links : '');
-  return template.replace('<!--app-head-->', head).replace('<!--app-html-->', rest);
+  const { appHtml } = render(routePath);
+  const { head, body } = splitHoistedHead(appHtml);
+  return template.replace('<!--app-head-->', () => head).replace('<!--app-html-->', () => body);
 };
 
 const routes = getStaticRoutes();
@@ -51,12 +40,11 @@ fs.writeFileSync(
   'utf-8'
 );
 
-const today = new Date().toISOString().slice(0, 10);
 const routeImages = getRouteImages();
 const escapeXml = (value) =>
   value.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 const imageEntries = (r) =>
-  (routeImages[r] ?? [])
+  [...new Set(routeImages[r] ?? [])]
     .map(
       (src) => `
     <image:image>
@@ -64,14 +52,13 @@ const imageEntries = (r) =>
     </image:image>`
     )
     .join('');
-const sitemapEntries = routes
-  .filter((r) => r !== '/saved-products')
+// Only canonical, indexable public pages belong in the sitemap. Omit lastmod
+// until we have real content revision dates rather than a new date per build.
+const sitemapEntries = getCanonicalRoutes()
   .map(
     (r) => `  <url>
     <loc>${SITE_URL}${r === '/' ? '/' : r}</loc>
-    <lastmod>${today}</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>${r === '/' ? '1.0' : '0.8'}</priority>${imageEntries(r)}
+    ${imageEntries(r)}
   </url>`
   )
   .join('\n');

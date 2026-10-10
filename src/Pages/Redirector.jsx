@@ -21,7 +21,11 @@ export const Redirector = () => {
   if (!isValid) {
     return (
       <div className="min-h-screen">
-        <Metadata pageTitle="Invalid Redirect Target | MOOSTYLES" noindex />
+        <Metadata
+          pageTitle="Invalid Redirect Target | MOOSTYLES"
+          pageDescription="This link does not point to an approved destination. Return to MOOSTYLES to browse inZOI content and creator links."
+          noindex
+        />
         <WebsiteBackground />
         <NavigationBar />
         <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -40,7 +44,11 @@ export const Redirector = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata pageTitle="Redirecting | MOOSTYLES" noindex />
+      <Metadata
+        pageTitle="Redirecting | MOOSTYLES"
+        pageDescription="Opening an external destination linked by MOOSTYLES."
+        noindex
+      />
       <WebsiteBackground />
       <main className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
         <p className="mod-detail__description">Redirecting to {target}...</p>

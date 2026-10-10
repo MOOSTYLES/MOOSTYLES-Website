@@ -3,6 +3,8 @@ import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./Pages/Home";
 import { ModDetail } from "./Pages/ModDetail";
 import { ModsIndex } from "./Pages/ModsIndex";
+import { Ardenne } from "./Pages/Ardenne";
+import { ArdenneMods } from "./Pages/ArdenneMods";
 import { Gallery } from "./Pages/Gallery";
 import { GalleryEntry } from "./Pages/GalleryEntry";
 import { ModDownload } from "./Pages/ModDownload";
@@ -21,12 +23,14 @@ import { Troubleshooting } from "./Pages/Guides/Troubleshooting";
 import { ModSafety } from "./Pages/Guides/ModSafety";
 import ErrorBoundary from "./Components/ErrorBoundary";
 import { FirstVisitGates } from "./Components/gates/FirstVisitGates";
+import { BrandTransition } from "./Components/BrandTransition";
 
 function App() {
   return (
     <ErrorBoundary>
       <div className="App">
         <FirstVisitGates />
+        <BrandTransition>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
@@ -37,6 +41,8 @@ function App() {
           <Route path="/offline" element={<Offline />} />
           <Route path="/links" element={<Links />} />
           <Route path="/mods" element={<ModsIndex />} />
+          <Route path="/ardenne" element={<Ardenne />} />
+          <Route path="/ardenne/mods" element={<ArdenneMods />} />
           <Route path="/mods/:slug" element={<ModDetail />} />
 
           <Route path="/product/:id" element={<ModDetail />} />
@@ -60,6 +66,7 @@ function App() {
           <Route path="/archive" element={<Navigate to="/mods" replace />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
+        </BrandTransition>
       </div>
     </ErrorBoundary>
   );

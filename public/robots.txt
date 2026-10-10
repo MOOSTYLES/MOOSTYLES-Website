@@ -1,29 +1,13 @@
-# Robots.txt for MOOSTYLES - InZOI Mods Website
-# Allow all crawlers to index the site
-
+﻿# MOOSTYLES: inZOI custom content, design inspiration, galleries and guides.
+# One shared group keeps the same private-path rules for all search engines.
 User-agent: *
 Allow: /
-
-# Disallow private/sensitive paths
 Disallow: /admin/
 Disallow: /api/
 Disallow: /private/
-Disallow: /*.json$
-Disallow: /*?*sort=
-Disallow: /*?*filter=
-Disallow: *?utm_source=
-Disallow: *?utm_campaign=
+Disallow: /.prerender-manifest.json
 
-# Allow specific search engine crawlers
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-# Crawl delay for other bots (in seconds)
-User-agent: *
-Crawl-delay: 1
-
-# Sitemap location
+# Public query URLs remain crawlable so engines can read their canonical tags.
+# Saved items, offline pages and errors use noindex metadata instead of blocking
+# crawlers from seeing that directive.
 Sitemap: https://moostyles.com/sitemap.xml

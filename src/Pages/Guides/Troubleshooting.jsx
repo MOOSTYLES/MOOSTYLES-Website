@@ -8,12 +8,7 @@ import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 export const Troubleshooting = () => {
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Troubleshooting Broken or Missing inZOI Mods | MOOSTYLES"
-        pageDescription="Fixes for the most common inZOI mod problems: pieces that won't appear in Build Mode, downloads that fail, crashes after installing, and mod conflicts."
-        canonical="/guides/troubleshooting"
-        article={{ title: "Troubleshooting Broken or Missing Mods" }}
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

@@ -310,11 +310,7 @@ export const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Privacy Policy | MOOSTYLES"
-        pageDescription="Privacy Policy for MOOSTYLES - Learn how we collect, use, and protect your personal information."
-        canonical="/privacy-policy"
-      />
+      <Metadata />
 
       <WebsiteBackground />
       <NavigationBar />

@@ -6,6 +6,7 @@ import { Metadata } from "@/Components/Metadata.jsx";
 import { Breadcrumb } from "@/Components/mods/Breadcrumb";
 import { getGalleryEntries } from "@/lib/mods";
 import { getImageAlt } from "@/lib/imageMeta";
+import { getGalleryMetadata } from "@/lib/seo";
 
 export const GalleryEntry = () => {
   const { slug } = useParams();
@@ -14,7 +15,11 @@ export const GalleryEntry = () => {
   if (!entry) {
     return (
       <div className="min-h-screen">
-        <Metadata pageTitle="Gallery Entry Not Found | MOOSTYLES" noindex />
+        <Metadata
+          pageTitle="Gallery Entry Not Found | MOOSTYLES"
+          pageDescription="This inZOI screenshot could not be found. Return to the MOOSTYLES gallery for in-game images and build inspiration."
+          noindex
+        />
         <WebsiteBackground />
         <NavigationBar />
         <main className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 text-center">
@@ -30,12 +35,7 @@ export const GalleryEntry = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle={`${entry.modName} Screenshot | MOOSTYLES`}
-        pageDescription={`An in-game screenshot from ${entry.modName}.`}
-        ogImage={entry.src}
-        canonical={`/gallery/${entry.key}`}
-      />
+      <Metadata {...getGalleryMetadata(entry, getImageAlt(entry.src, entry.modName))} />
       <WebsiteBackground />
       <NavigationBar />
       <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

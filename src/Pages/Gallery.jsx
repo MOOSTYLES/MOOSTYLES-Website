@@ -15,11 +15,7 @@ export const Gallery = () => {
 
   return (
     <div className="min-h-screen">
-      <Metadata
-        pageTitle="Gallery | MOOSTYLES"
-        pageDescription="In-game screenshots from MOOSTYLES InZOI mods."
-        canonical="/gallery"
-      />
+      <Metadata listingItems={entries.map((entry) => ({ name: `${entry.modName} Screenshot`, url: `/gallery/${entry.key}` }))} ogImage={entries[0]?.src} />
       <WebsiteBackground />
       <NavigationBar />
       <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">

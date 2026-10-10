@@ -1,0 +1,44 @@
+{
+  "name": "TZL T2 Air Conditioner",
+  "slug": "tzl-t2-air-conditioner",
+  "media": {
+    "banner": "/projects/Mods/tzl-t2-air-conditioner/Thumbnail_CF.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/tzl-t2-air-conditioner/Showcase (2).jpg",
+      "/projects/Mods/tzl-t2-air-conditioner/Showcase (1).jpg"
+    ]
+  },
+  "description": "The larger and more commercialized versions of the TZL Air Conditioning units. Fully functional and cools the air, bringing satisfaction to your Zoi's mood. Now support colors!",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/build-mode/tzl-t2-air-conditioner-8a3d0854",
+      "date": "2026-10-09T19:22:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/tzl-t2-air-171932374?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "TZL T2 Air Conditioner",
+      "description": "The larger and more commercialized versions of the TZL Air Conditioning units. Fully functional and cools the air, bringing satisfaction to your Zoi's mood. Now support colors!"
+    }
+  ],
+  "collection": "TZL",
+  "tags": [],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "untested",
+    "gameVersion": "inZOI"
+  },
+  "legacyId": "",
+  "dateAdded": "2026-10-10T00:26:25Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

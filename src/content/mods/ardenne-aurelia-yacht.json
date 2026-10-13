@@ -1,0 +1,43 @@
+{
+  "name": "ARDENNE Aurelia: Yacht",
+  "slug": "ardenne-aurelia-yacht",
+  "media": {
+    "banner": "/projects/Mods/ardenne-aurelia-yacht/Thumbnail_CF.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/ardenne-aurelia-yacht/Showcase2.jpg",
+      "/projects/Mods/ardenne-aurelia-yacht/Showcase1.png"
+    ]
+  },
+  "description": "Introducing the ARDENNE Aurelia, a small luxury yacht designed to bring the signature elegance of Ardenne beyond the road and onto the open water. The Aurelia is built for effortless cruising in style. Whether you're enjoying a quiet afternoon on the water or entertaining guests under the sun, the Aurelia delivers a balance of comfort, sophistication, and vibes.",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/mods/ardenne-aurelia-3b037a6e",
+      "date": "2026-10-12T20:18:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/ardenne-aurelia-172201695?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "ARDENNE Aurelia: Yacht",
+      "description": "Introducing the ARDENNE Aurelia, a small luxury yacht designed to bring the signature elegance of Ardenne beyond the road and onto the open water. The Aurelia is built for effortless cruising in style. Whether you're enjoying a quiet afternoon on the water or entertaining guests under the sun, the Aurelia delivers a balance of comfort, sophistication, and vibes."
+    }
+  ],
+  "collection": "ARDENNE",
+  "tags": [],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "working",
+    "gameVersion": "inZOI"
+  },
+  "dateAdded": "2026-10-13T01:18:53Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

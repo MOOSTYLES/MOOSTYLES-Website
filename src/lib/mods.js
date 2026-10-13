@@ -77,11 +77,17 @@ export const getRelatedMods = (slug, limit = 4) => {
 };
 
 export const getGalleryEntries = () =>
-  allMods.flatMap((mod) =>
-    mod.media.screenshots.map((src, index) => ({
-      src,
-      modName: mod.name,
-      modSlug: mod.slug,
-      key: `${mod.slug}-${index}`,
-    }))
-  );
+  [...allMods]
+    .sort((a, b) => (Date.parse(b.dateAdded) || 0) - (Date.parse(a.dateAdded) || 0))
+    .flatMap((mod) => {
+      const seen = new Set([mod.media.banner]);
+      // Keep existing screenshot URLs stable when previews are added.
+      const screenshots = mod.media.screenshots.map((src, index) => ({ src, key: `${mod.slug}-${index}` }));
+      const previews = mod.media.previews.map((src, index) => ({ src, key: `${mod.slug}-preview-${index}` }));
+      const images = [...screenshots, ...previews].filter(({ src }) => {
+        if (!src || /\.mp4(\?|$)/i.test(src) || seen.has(src)) return false;
+        seen.add(src);
+        return true;
+      });
+      return images.map((entry) => ({ ...entry, modName: mod.name, modSlug: mod.slug }));
+    });

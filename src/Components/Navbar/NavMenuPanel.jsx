@@ -10,6 +10,7 @@ const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "My Mod List", to: "/mods" },
   { label: "ARDENNE", to: "/ardenne" },
+  { label: "Blog", to: "/blog" },
   { label: "Guides", to: "/guides" },
   { label: "Saved Items", to: "/saved-products" },
   { label: "Support", to: "/support" },

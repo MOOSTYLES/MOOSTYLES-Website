@@ -119,7 +119,7 @@ export const buildPageMetadata = (pathname, options = {}) => {
   if (article) {
     const articleId = `${canonical}#article`;
     pageNode.mainEntity = { "@id": articleId };
-    graph.push({ "@type": "Article", "@id": articleId, headline: article.title || page.label || title, description, image, url: canonical, inLanguage: "en", author: { "@id": creatorId }, publisher: { "@id": organizationId }, mainEntityOfPage: { "@id": pageId }, about: { "@id": gameId }, keywords,
+    graph.push({ "@type": "Article", "@id": articleId, headline: article.title || page.label || title, description, image, url: canonical, inLanguage: "en", author: article.authorName ? { "@type": "Person", name: article.authorName } : { "@id": creatorId }, publisher: { "@id": organizationId }, mainEntityOfPage: { "@id": pageId }, about: { "@id": gameId }, keywords,
       ...(article.publishedTime ? { datePublished: article.publishedTime } : {}),
       ...(article.modifiedTime ? { dateModified: article.modifiedTime } : {}),
     });

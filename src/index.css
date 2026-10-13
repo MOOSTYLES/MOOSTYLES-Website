@@ -14,6 +14,7 @@
 @import "./styles/guides.css";
 @import "./styles/about.css";
 @import "./styles/gates.css";
+@import "./styles/blog.css";
 
 /* Targeted focus outline removal for back buttons only */
 .back-button-simple:focus {
@@ -142,9 +143,14 @@ img {
 }
 
 /* Accessibility improvements */
-:focus {
+:focus-visible {
   outline: 2px solid #0d9488;
   outline-offset: 2px;
+}
+
+/* Brand transitions focus main for screen readers, not as a selected control. */
+.brand-page main[tabindex="-1"]:focus {
+  outline: none;
 }
 
 /* High contrast mode support */

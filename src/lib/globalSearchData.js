@@ -1,5 +1,6 @@
 import { getAllProducts } from './shoppingData.js';
 import { LIVE_ARDENNE_CATEGORIES, ARDENNE_PUBLIC_COPY } from '../content/ardenne.js';
+import { getAllPosts } from './blog.js';
 
 const getAllProductsForSearch = () => {
   const products = getAllProducts();
@@ -159,6 +160,8 @@ const getStaticPages = () => [
 export const getGlobalSearchData = () => {
   return [
     ...getAllProductsForSearch(),
+    { id: 'blog', title: 'Blog', description: 'MOOSTYLES announcements, blogs and tutorials', content: 'Design stories, community posts and updates', excerpt: 'Explore the MOOSTYLES journal', category: 'pages', tags: ['blog', 'tutorials', 'announcements'], type: 'page', url: '/blog' },
+    ...getAllPosts().map((post) => ({ id: `post-${post.slug}`, title: post.title, description: post.excerpt, excerpt: post.excerpt, content: post.body, category: 'blog', subcategory: post.type, tags: [post.type, ...post.tags], author: post.author, type: 'page', date: post.publishedAt, image: post.cover, url: `/blog/${post.slug}` })),
     ...getStaticPages()
   ];
 };

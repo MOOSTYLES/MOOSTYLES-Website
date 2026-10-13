@@ -1,6 +1,8 @@
 import React from "react";
 import { Routes, Route, Navigate } from "react-router-dom";
 import { Home } from "./Pages/Home";
+import { Blog } from "./Pages/Blog";
+import { BlogPost } from "./Pages/BlogPost";
 import { ModDetail } from "./Pages/ModDetail";
 import { ModsIndex } from "./Pages/ModsIndex";
 import { Ardenne } from "./Pages/Ardenne";
@@ -34,6 +36,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/home" element={<Home />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/support" element={<Support />} />
           <Route path="/saved-products" element={<SavedProducts />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />

@@ -13,7 +13,7 @@ export const Metadata = (props) => {
       <title>{metadata.title}</title>
       <meta name="description" content={metadata.description} />
       <meta name="keywords" content={metadata.keywords} />
-      <meta name="author" content={SITE_METADATA.creator} />
+      <meta name="author" content={props.article?.authorName || SITE_METADATA.creator} />
       <meta name="robots" content={metadata.robots} />
       <link rel="canonical" href={metadata.canonical} />
 
@@ -38,7 +38,7 @@ export const Metadata = (props) => {
       <meta name="twitter:description" content={metadata.ogDescription} />
       <meta name="twitter:image" content={metadata.image} />
       <meta name="twitter:image:alt" content={metadata.imageAlt} />
-      {metadata.ogType === "article" && <meta property="article:author" content="https://moostyles.com/about" />}
+      {metadata.ogType === "article" && (!props.article?.authorName || props.article.authorUrl) && <meta property="article:author" content={props.article?.authorUrl || "https://moostyles.com/about"} />}
       {props.article?.publishedTime && <meta property="article:published_time" content={props.article.publishedTime} />}
       {props.article?.modifiedTime && <meta property="article:modified_time" content={props.article.modifiedTime} />}
 

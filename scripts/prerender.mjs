@@ -48,7 +48,7 @@ const imageEntries = (r) =>
     .map(
       (src) => `
     <image:image>
-      <image:loc>${escapeXml(SITE_URL + encodeURI(src))}</image:loc>
+      <image:loc>${escapeXml(new URL(src, SITE_URL).href)}</image:loc>
     </image:image>`
     )
     .join('');

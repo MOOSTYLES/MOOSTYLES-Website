@@ -1,0 +1,45 @@
+{
+  "name": "ARDENNE Teala: Convertible",
+  "slug": "ardenne-teala-convertible",
+  "media": {
+    "banner": "/projects/Mods/ardenne-teala-convertible/Showcase 2.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/ardenne-teala-convertible/showcase (1).jpg",
+      "/projects/Mods/ardenne-teala-convertible/showcase (2).jpg"
+    ]
+  },
+  "description": "Grab those bag, for the Ardenne Teala has arrived. A sophisticated open top grand tourer from ARDENNE, combining elegant proportions, modern styling, and the freedom of a convertible. Comes with 8 color variations.\n\nThe Teala is designed for those who want luxury without sacrificing personality. Its flowing bodywork, low-profile stance, sculpted front end, and spacious four-seat interior give it a distinctive road presence. The Teala brings a more relaxed and expressive character to the Ardenne lineup. Built for speed and the wind",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/mods/ardenne-teala-dce2d161",
+      "date": "2026-10-12T20:33:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/ardenne-teala-172202481?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "ARDENNE Teala: Convertible",
+      "description": "Grab those bag, for the Ardenne Teala has arrived. A sophisticated open top grand tourer from ARDENNE, combining elegant proportions, modern styling, and the freedom of a convertible. Comes with 8 color variations.\n\nThe Teala is designed for those who want luxury without sacrificing personality. Its flowing bodywork, low-profile stance, sculpted front end, and spacious four-seat interior give it a distinctive road presence. The Teala brings a more relaxed and expressive character to the Ardenne lineup. Built for speed and the wind"
+    }
+  ],
+  "collection": "ARDENNE",
+  "tags": [
+    "Automobiles"
+  ],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "working",
+    "gameVersion": "inZOI"
+  },
+  "dateAdded": "2026-10-13T01:34:26Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

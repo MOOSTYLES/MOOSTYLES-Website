@@ -1,0 +1,45 @@
+{
+  "name": "ARDENNE OceanClass: Super Yacht",
+  "slug": "ardenne-oceanclass-super-yacht",
+  "media": {
+    "banner": "/projects/Mods/ardenne-oceanclass-super-yacht/Thumbnail_CF.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/ardenne-oceanclass-super-yacht/Showcase (6).jpg",
+      "/projects/Mods/ardenne-oceanclass-super-yacht/oceanclass_hero.png"
+    ]
+  },
+  "description": "Introducing the ARDENNE OceanClass, a grand luxury super yacht designed to bring the signature elegance of Ardenne onto the open water. With its expansive decks, sophisticated styling, spacious interior, and commanding profile, the OceanClass is built for luxurious cruising and unforgettable escapes. The OceanClass delivers a perfect image of wealth and prosperity",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/mods/ardenne-oceanclass-0b5e706f",
+      "date": "2026-10-12T20:06:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/ardenne-super-172200635?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "ARDENNE OceanClass: Super Yacht",
+      "description": "Introducing the ARDENNE OceanClass, a grand luxury super yacht designed to bring the signature elegance of Ardenne onto the open water. With its expansive decks, sophisticated styling, spacious interior, and commanding profile, the OceanClass is built for luxurious cruising and unforgettable escapes. The OceanClass delivers a perfect image of wealth and prosperity"
+    }
+  ],
+  "collection": "ARDENNE",
+  "tags": [
+    "Yachts"
+  ],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "working",
+    "gameVersion": "inZOI"
+  },
+  "dateAdded": "2026-10-13T01:07:22Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

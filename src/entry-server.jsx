@@ -69,7 +69,7 @@ export function getCanonicalRoutes() {
 // canonical /mods/ URL only; /product/ pages are duplicates of those.
 export function getRouteImages() {
   const routeImages = { '/': [...HERO_IMAGES, ...getStandardMods().slice(0, 5).map((mod) => mod.media.banner)] };
-  routeImages['/ardenne'] = LIVE_ARDENNE_CATEGORIES.map((category) => category.image);
+  routeImages['/ardenne'] = LIVE_ARDENNE_CATEGORIES.flatMap((category) => [category.image, category.heroImage].filter(Boolean));
   routeImages['/mods'] = getStandardMods().map((mod) => mod.media.banner);
   routeImages['/ardenne/mods'] = getArdenneMods().map((mod) => mod.media.banner);
   routeImages['/gallery'] = getGalleryEntries().map((entry) => entry.src);

@@ -45,8 +45,8 @@ export const Ardenne = () => {
           <AnimatePresence initial={false}>
             <motion.img
               key={activeCategory.id}
-              src={activeCategory.image}
-              alt={activeCategory.alt}
+              src={activeCategory.heroImage || activeCategory.image}
+              alt={activeCategory.heroAlt || activeCategory.alt}
               fetchPriority={activeIndex === 0 ? "high" : "auto"}
               width="1536"
               height="1024"

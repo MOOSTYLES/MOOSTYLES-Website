@@ -10,26 +10,30 @@
   "scope": "/",
   "icons": [
     {
-      "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
+      "src": "/icons/moostyles-192.png",
       "sizes": "192x192",
       "type": "image/png",
       "purpose": "any"
     },
     {
-      "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
+      "src": "/icons/moostyles-512.png",
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
     }
   ],
-  "categories": ["games", "entertainment", "utilities"],
+  "categories": [
+    "games",
+    "entertainment",
+    "utilities"
+  ],
   "lang": "en",
   "dir": "ltr",
   "screenshots": [
     {
-      "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png",
+      "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp",
       "sizes": "512x512",
-      "type": "image/png",
+      "type": "image/webp",
       "form_factor": "wide"
     }
   ],
@@ -41,8 +45,8 @@
       "url": "/mods",
       "icons": [
         {
-          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
-          "sizes": "96x96"
+          "src": "/icons/moostyles-192.png",
+          "sizes": "192x192"
         }
       ]
     },
@@ -53,8 +57,8 @@
       "url": "/ardenne",
       "icons": [
         {
-          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
-          "sizes": "96x96"
+          "src": "/icons/moostyles-192.png",
+          "sizes": "192x192"
         }
       ]
     },
@@ -65,8 +69,8 @@
       "url": "/gallery",
       "icons": [
         {
-          "src": "/projects/Website Branding/MOOSTYLES LOGO - TEAL DARKCOLOR.png",
-          "sizes": "96x96"
+          "src": "/icons/moostyles-192.png",
+          "sizes": "192x192"
         }
       ]
     },

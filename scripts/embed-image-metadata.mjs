@@ -1,12 +1,13 @@
 // Embeds XMP metadata (title, description, alt text, creator, copyright) into
-// every JPEG/PNG under dist/projects after the build. It only edits the built
+// every JPEG/PNG/WebP under dist/projects after the build. It only edits the built
 // copies, so the originals in public/ stay untouched and each build starts clean.
 //
 // Pixel data is never re-encoded: the XMP packet is inserted as its own
-// JPEG APP1 segment or PNG iTXt chunk, and any older XMP packet is replaced.
+// JPEG APP1 segment, PNG iTXt chunk or WebP XMP chunk, replacing older packets.
 import fs from 'node:fs';
 import path from 'node:path';
 import zlib from 'node:zlib';
+import sharp from 'sharp';
 import { fileURLToPath, pathToFileURL } from 'node:url';
 import { SITE_URL } from '../src/lib/config.js';
 
@@ -168,16 +169,60 @@ const loadModImageIndex = () => {
   return index;
 };
 
+export const readWebpChunks = (buffer) => {
+  if (buffer.toString('ascii', 0, 4) !== 'RIFF' || buffer.toString('ascii', 8, 12) !== 'WEBP') throw new Error('Not a WebP file');
+  const chunks = [];
+  for (let offset = 12; offset < buffer.length;) {
+    const size = buffer.readUInt32LE(offset + 4);
+    const end = offset + 8 + size + (size % 2);
+    if (end > buffer.length) throw new Error('Invalid WebP chunk');
+    chunks.push({ type: buffer.toString('ascii', offset, offset + 4), data: buffer.subarray(offset + 8, offset + 8 + size), raw: buffer.subarray(offset, end) });
+    offset = end;
+  }
+  return chunks;
+};
+
+const webpChunk = (type, data) => {
+  const result = Buffer.alloc(8 + data.length + (data.length % 2));
+  result.write(type, 0, 'ascii');
+  result.writeUInt32LE(data.length, 4);
+  data.copy(result, 8);
+  return result;
+};
+
+export const embedXmpInWebp = async (buffer, xmp) => {
+  const chunks = readWebpChunks(buffer).filter((chunk) => chunk.type !== 'XMP ');
+  const extended = chunks.find((chunk) => chunk.type === 'VP8X');
+  if (extended) {
+    const data = Buffer.from(extended.data);
+    data[0] |= 0x04; // XMP presence flag.
+    extended.raw = webpChunk('VP8X', data);
+  } else {
+    const { width, height, hasAlpha } = await sharp(buffer).metadata();
+    const data = Buffer.alloc(10);
+    data[0] = 0x04 | (hasAlpha ? 0x10 : 0);
+    data.writeUIntLE(width - 1, 4, 3);
+    data.writeUIntLE(height - 1, 7, 3);
+    chunks.unshift({ raw: webpChunk('VP8X', data) });
+  }
+  const payload = Buffer.concat([...chunks.map((chunk) => chunk.raw), webpChunk('XMP ', Buffer.from(xmp, 'utf8'))]);
+  const header = Buffer.alloc(12);
+  header.write('RIFF', 0, 'ascii');
+  header.writeUInt32LE(payload.length + 4, 4);
+  header.write('WEBP', 8, 'ascii');
+  return Buffer.concat([header, payload]);
+};
+
 const walkImages = (dir) =>
   fs.readdirSync(dir, { withFileTypes: true }).flatMap((entry) => {
     const full = path.join(dir, entry.name);
     if (entry.isDirectory()) return walkImages(full);
-    return /\.(jpe?g|png)$/i.test(entry.name) ? [full] : [];
+    return /\.(jpe?g|png|webp)$/i.test(entry.name) ? [full] : [];
   });
 
 export const metadataFor = (src, imageMeta, modIndex) => {
   const entry = imageMeta[src] ?? {};
-  const mod = modIndex.get(src);
+  const mod = modIndex.get(src) ?? modIndex.get(src.replace(/\.(png|jpe?g)$/i, '.webp'));
   const title = entry.title ?? (mod ? `${mod.name} - inZOI Mod by MOOSTYLES` : 'MOOSTYLES');
   const alt = entry.alt ?? mod?.name ?? title;
   return {
@@ -189,7 +234,7 @@ export const metadataFor = (src, imageMeta, modIndex) => {
   };
 };
 
-const main = () => {
+const main = async () => {
   const distDir = path.join(root, 'dist');
   const imagesDir = path.join(distDir, 'projects');
   if (!fs.existsSync(imagesDir)) {
@@ -207,7 +252,8 @@ const main = () => {
     if (!imageMeta[src]?.alt) missingAlt.push(src);
     const xmp = buildXmp(metadataFor(src, imageMeta, modIndex));
     const input = fs.readFileSync(file);
-    const output = /\.png$/i.test(file) ? embedXmpInPng(input, xmp) : embedXmpInJpeg(input, xmp);
+    const output = /\.webp$/i.test(file) ? await embedXmpInWebp(input, xmp)
+      : /\.png$/i.test(file) ? embedXmpInPng(input, xmp) : embedXmpInJpeg(input, xmp);
     fs.writeFileSync(file, output);
     tagged += 1;
   }
@@ -220,5 +266,5 @@ const main = () => {
 };
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
-  main();
+  await main();
 }

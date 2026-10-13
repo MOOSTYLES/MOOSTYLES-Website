@@ -48,7 +48,7 @@ export const NavigationBar = () => {
           transition={TAP_TRANSITION}
         >
           <img
-            src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"}
+            src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.webp"}
             alt=""
             className="site-nav__home-logo"
           />

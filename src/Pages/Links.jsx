@@ -65,7 +65,7 @@ export const Links = () => {
               transition={{ duration: 0.5 }}
             >
               <img
-                src="/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png"
+                src="/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp"
                 alt="MOOSTYLES Logo"
                 className="w-24 h-24 mx-auto mb-6 rounded-2xl"
               />

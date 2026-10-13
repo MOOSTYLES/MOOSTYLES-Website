@@ -12,7 +12,7 @@ const SUPPORT_TIERS = [
     description: "Support MOOSTYLE by contributing a small tip!",
     price: "1USD",
     theme: "light",
-    logo: "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png",
+    logo: "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.webp",
   },
   {
     key: "chateau",
@@ -21,7 +21,7 @@ const SUPPORT_TIERS = [
       "Support MOOSTYLE by contributing a small tip! Gain Access to behind the scene updates and access to Quicklink downloads and more!",
     price: "2USD",
     theme: "dark",
-    logo: "/projects/Website Branding/MOOSTYLES LOGO - WHITE COLOR.png",
+    logo: "/projects/Website Branding/MOOSTYLES LOGO - WHITE COLOR.webp",
   },
 ];
 
@@ -29,7 +29,7 @@ export const SupportMyWork = () => (
   <section className="support-my-work">
     <h1 className="support-my-work__heading">
       <img
-        src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"
+        src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.webp"
         alt=""
         className="support-my-work__heading-logo"
       />

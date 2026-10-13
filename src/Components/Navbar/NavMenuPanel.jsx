@@ -42,7 +42,7 @@ export const NavMenuPanel = ({ onNavigate }) => {
     <div className="nav-menu">
       <Link to={inArdenne ? "/ardenne" : "/"} className="nav-menu__brand" onClick={onNavigate}>
         <img
-          src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png"}
+          src={inArdenne ? ARDENNE_LOGOS.black : "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp"}
           alt=""
           className="nav-menu__brand-logo"
         />

@@ -1,16 +1,18 @@
 import fs from "node:fs";
 import path from "node:path";
 import zlib from "node:zlib";
+import sharp from "sharp";
 import { fileURLToPath } from "node:url";
 import { describe, expect, it } from "vitest";
-import { buildXmp, embedXmpInJpeg, embedXmpInPng, readPngChunks } from "./embed-image-metadata.mjs";
+import { buildXmp, embedXmpInJpeg, embedXmpInPng, embedXmpInWebp, readWebpChunks, readPngChunks } from "./embed-image-metadata.mjs";
 import imageMeta from "../src/content/imageMeta.json";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const publicFile = (src) => path.join(root, "public", ...src.split("/").filter(Boolean));
 
-const SAMPLE_JPEG = "/projects/Mods/seeglass-mirror/seeglass-standing-mirror-doorway.jpg";
-const SAMPLE_PNG = "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png";
+// Generate fixtures so tests keep working after archived originals are removed.
+const SAMPLE_JPEG = await sharp({ create: { width: 32, height: 24, channels: 3, background: "#387caa" } }).jpeg().toBuffer();
+const SAMPLE_PNG = await sharp({ create: { width: 32, height: 24, channels: 4, background: { r: 30, g: 90, b: 120, alpha: 0.5 } } }).png().toBuffer();
 
 const xmp = buildXmp({
   title: "Test <Title> & Co",
@@ -20,6 +22,20 @@ const xmp = buildXmp({
 });
 
 const countOccurrences = (buffer, needle) => buffer.toString("latin1").split(needle).length - 1;
+
+describe("WebP metadata", () => {
+  it.each([false, true])("adds and replaces XMP without re-encoding pixels (lossless=%s)", async (lossless) => {
+    const input = await sharp(SAMPLE_PNG).webp({ lossless }).toBuffer();
+    const once = await embedXmpInWebp(input, xmp);
+    const twice = await embedXmpInWebp(once, xmp);
+    expect(twice.equals(once)).toBe(true);
+    expect(readWebpChunks(twice).filter((chunk) => chunk.type === "XMP ")).toHaveLength(1);
+    expect((await sharp(twice).metadata()).xmp.toString()).toBe(xmp);
+    const compressedData = (buffer) => Buffer.concat(readWebpChunks(buffer).filter((chunk) => ["VP8 ", "VP8L", "ALPH"].includes(chunk.type)).map((chunk) => chunk.raw));
+    expect(compressedData(once).equals(compressedData(input))).toBe(true);
+    expect((await sharp(twice).raw().toBuffer()).equals(await sharp(input).raw().toBuffer())).toBe(true);
+  });
+});
 
 describe("imageMeta.json", () => {
   it("only lists images that exist in public/", () => {
@@ -41,7 +57,7 @@ describe("buildXmp", () => {
 });
 
 describe("embedXmpInJpeg", () => {
-  const original = fs.readFileSync(publicFile(SAMPLE_JPEG));
+  const original = SAMPLE_JPEG;
   const once = embedXmpInJpeg(original, xmp);
   const twice = embedXmpInJpeg(once, xmp);
 
@@ -58,7 +74,7 @@ describe("embedXmpInJpeg", () => {
 });
 
 describe("embedXmpInPng", () => {
-  const original = fs.readFileSync(publicFile(SAMPLE_PNG));
+  const original = SAMPLE_PNG;
   const once = embedXmpInPng(original, xmp);
   const twice = embedXmpInPng(once, xmp);
 

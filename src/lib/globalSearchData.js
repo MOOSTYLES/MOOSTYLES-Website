@@ -41,7 +41,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'about',
@@ -56,7 +56,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/about',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'mods',
@@ -71,7 +71,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/mods',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'ardenne',
@@ -108,7 +108,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/saved-products',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'support',
@@ -123,7 +123,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/support',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'privacy-policy',
@@ -138,7 +138,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/privacy-policy',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   },
   {
     id: 'terms-of-service',
@@ -153,7 +153,7 @@ const getStaticPages = () => [
     type: 'page',
     date: new Date().toISOString(),
     url: '/terms-of-service',
-    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png'
+    image: '/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp'
   }
 ];
 

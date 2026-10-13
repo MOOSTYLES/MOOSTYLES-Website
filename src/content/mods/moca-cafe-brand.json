@@ -9,11 +9,11 @@
     "gameVersion": "inZOI"
   },
   "media": {
-    "banner": "/projects/Products/MOCA Brand/moca-cafe-logo.png",
+    "banner": "/projects/Products/MOCA Brand/moca-cafe-logo.webp",
     "previews": [
-      "/projects/Products/MOCA Brand/moca-cafe-building-exterior.png",
-      "/projects/Products/MOCA Brand/moca-drink-cups-poster.png",
-      "/projects/Products/MOCA Brand/moca-strawberry-tea-cans-poster.png"
+      "/projects/Products/MOCA Brand/moca-cafe-building-exterior.webp",
+      "/projects/Products/MOCA Brand/moca-drink-cups-poster.webp",
+      "/projects/Products/MOCA Brand/moca-strawberry-tea-cans-poster.webp"
     ],
     "screenshots": []
   },

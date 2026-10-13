@@ -25,7 +25,9 @@
     }
   ],
   "collection": "ARDENNE",
-  "tags": [],
+  "tags": [
+    "Yachts"
+  ],
   "knownIssues": [],
   "installation": [],
   "fileTypes": [

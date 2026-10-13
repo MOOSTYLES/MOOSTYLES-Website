@@ -6,6 +6,7 @@ import { getAllMods, getStandardMods, getArdenneMods, getGalleryEntries } from '
 import { HERO_IMAGES } from './content/heroImages';
 import { LIVE_ARDENNE_CATEGORIES } from './content/ardenne';
 import { PUBLIC_PAGE_PATHS } from './content/siteMetadata';
+import { getAllPosts } from './lib/blog';
 
 export function render(url) {
   const appHtml = renderToString(
@@ -22,6 +23,7 @@ export function render(url) {
 const STATIC_PATHS = [
   '/',
   '/home',
+  '/blog',
   '/support',
   '/saved-products',
   '/privacy-policy',
@@ -51,7 +53,7 @@ export function getStaticRoutes() {
 
   const galleryPaths = galleryEntries.map((entry) => `/gallery/${entry.key}`);
 
-  return [...STATIC_PATHS, ...modPaths, ...galleryPaths];
+  return [...STATIC_PATHS, ...modPaths, ...galleryPaths, ...getAllPosts().map((post) => `/blog/${post.slug}`)];
 }
 
 export function getCanonicalRoutes() {
@@ -59,6 +61,7 @@ export function getCanonicalRoutes() {
     ...PUBLIC_PAGE_PATHS,
     ...getAllMods().map((mod) => `/mods/${mod.slug}`),
     ...getGalleryEntries().map((entry) => `/gallery/${entry.key}`),
+    ...getAllPosts().map((post) => `/blog/${post.slug}`),
   ];
 }
 
@@ -70,6 +73,12 @@ export function getRouteImages() {
   routeImages['/mods'] = getStandardMods().map((mod) => mod.media.banner);
   routeImages['/ardenne/mods'] = getArdenneMods().map((mod) => mod.media.banner);
   routeImages['/gallery'] = getGalleryEntries().map((entry) => entry.src);
+  routeImages['/blog'] = [...HERO_IMAGES, ...getAllPosts().map((post) => post.cover).filter(Boolean)];
+  for (const post of getAllPosts()) {
+    const bodyImages = [...post.body.matchAll(/!\[[^\]]*\]\(\s*(<[^>]+>|[^\s)]+)(?:\s+[^)]*)?\)/g)]
+      .map((match) => match[1].replace(/^<|>$/g, ""));
+    routeImages[`/blog/${post.slug}`] = [post.cover, ...bodyImages].filter(Boolean);
+  }
 
   for (const mod of getAllMods()) {
     const { banner, previews = [], screenshots = [] } = mod.media;

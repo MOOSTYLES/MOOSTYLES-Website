@@ -27,15 +27,31 @@ const SUPPORT_TIERS = [
 
 export const SupportMyWork = () => (
   <section className="support-my-work">
+    <h1 className="support-my-work__heading">
+      <img
+        src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"
+        alt=""
+        className="support-my-work__heading-logo"
+      />
+      Overview
+    </h1>
     <p className="support-my-work__intro">
-      The official website of MOOSTYLES and Partnered Brands.
-      <br />
-      All contents made for inZOI.
+      MOOSTYLES is a creative home for inZOI. We create furniture, decor and
+      original brands that bring character to the spaces you build and the stories
+      you tell. From everyday pieces to statement collections, our work starts
+      with a simple idea: thoughtful design makes a world feel like your own.
+    </p>
+    <p className="support-my-work__intro">
+      We care about form, atmosphere and the small details that make a space feel
+      complete. Together with our partnered brands, we explore different styles
+      and ways of living, giving you more freedom to shape your inZOI world.
+      Discover our collections, find inspiration in the gallery and choose the
+      pieces that speak to the way you create.
     </p>
 
     <h1 className="support-my-work__heading">
       <img
-        src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"
+        src="/projects/Website Branding/patreon-icon-black.svg"
         alt=""
         className="support-my-work__heading-logo"
       />

@@ -35,6 +35,7 @@ export const Footer = ({ brand = "MOOSTYLES" }) => {
       title: "About",
       links: [
         { name: "About Me", href: "/about" },
+        { name: "Blog", href: "/blog" },
         { name: "More Links", href: "/links" },
         { name: "Moocalf.com", href: "https://moocalf.com" }
       ]

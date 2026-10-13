@@ -4,7 +4,7 @@ export const SITE_METADATA = {
   name: "MOOSTYLES",
   creator: "MooCalf",
   description: "inZOI furniture, decor, custom brands and build inspiration by MooCalf. Explore MOOSTYLES mods, in-game screenshots, practical guides and ARDENNE.",
-  image: "/projects/HeroSection/moostyles-banner.png",
+  image: "/projects/HeroSection/oceanclass_hero.png",
   logo: "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png",
   profiles: [
     "https://www.patreon.com/c/MOOSTYLES",
@@ -16,6 +16,12 @@ export const SITE_METADATA = {
 
 // These describe existing pages, rather than topics the site does not cover.
 export const PAGE_METADATA = {
+  "/blog": {
+    title: "Blog | MOOSTYLES Announcements, Stories & Tutorials",
+    description: "Explore MOOSTYLES announcements, design stories, inZOI tutorials, updates and behind-the-scenes posts.",
+    label: "Blog",
+    keywords: ["MOOSTYLES blog", "inZOI tutorials", "inZOI announcements", "design stories"],
+  },
   "/": {
     title: "MOOSTYLES | inZOI Mods, Build Inspiration & Custom Content",
     description: "Explore inZOI furniture, decor, custom brands and build inspiration from MOOSTYLES. Browse free mods, in-game screenshots, practical guides and ARDENNE.",

@@ -14,6 +14,60 @@ media_folder: "public/projects"
 public_folder: "/projects"
 
 collections:
+  - name: posts
+    label: "Blog Posts"
+    label_singular: "Post"
+    description: "Create announcements, blogs, tutorials and more. Set Visibility to Published and publish through the workflow to make a post live after the site rebuilds."
+    folder: "src/content/posts"
+    create: true
+    slug: "{{slug}}"
+    identifier_field: title
+    extension: json
+    format: json
+    summary: "{{title}} — {{type}} ({{status}})"
+    sortable_fields: ["title", "publishedAt", "type"]
+    preview_path: "blog/{{fields.slug}}"
+    media_folder: "/public/projects/Blog/{{slug}}"
+    public_folder: "/projects/Blog/{{slug}}"
+    fields:
+      - { label: "Title", name: title, widget: string }
+      - label: "URL Slug"
+        name: slug
+        widget: string
+        pattern: ["^[a-z0-9]+(?:-[a-z0-9]+)*$", "Lowercase letters, numbers and dashes only."]
+        hint: "The address is moostyles.com/blog/your-slug. Keep it stable after publishing."
+      - label: "Post Type"
+        name: type
+        widget: select
+        options: ["Announcement", "Blog", "Tutorial", "Update", "Behind the Scenes", "Community"]
+        default: "Blog"
+      - label: "Tags"
+        name: tags
+        widget: list
+        required: false
+        field: { label: "Tag", name: tag, widget: string }
+        hint: "Add your own topic tags, such as Furniture, ARDENNE, Build Tips or Releases. Readers can filter by these tags."
+      - { label: "Short Summary", name: excerpt, widget: text, hint: "Shown on post cards and in search results." }
+      - { label: "Cover Image", name: cover, widget: image, required: false }
+      - { label: "Cover Image Description", name: coverAlt, widget: string, required: false, hint: "Describe the image for readers using screen readers." }
+      - { label: "Author", name: author, widget: string, default: "MOOSTYLES" }
+      - label: "Publication Date"
+        name: publishedAt
+        widget: datetime
+        picker_utc: true
+        auto_now: [create]
+        hint: "Used for display and sorting. Future dates do not schedule publication; use Draft until ready."
+      - { label: "Last Updated", name: updatedAt, widget: datetime, required: false, picker_utc: true }
+      - label: "Visibility"
+        name: status
+        widget: select
+        options: [ { label: "Draft — hidden from the website", value: "draft" }, { label: "Published — visible on the website", value: "published" } ]
+        default: "draft"
+      - { label: "Featured Post", name: featured, widget: boolean, default: false, hint: "The newest featured post appears in the spotlight." }
+      - label: "Post Content"
+        name: body
+        widget: markdown
+        hint: "Write your full post. Add headings, images, links, lists, quotes and code."
   - name: mods
     label: "Mods"
     label_singular: "Mod"

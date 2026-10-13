@@ -1,0 +1,45 @@
+{
+  "name": "ARDENNE Aster: Sedan",
+  "slug": "ardenne-aster-sedan",
+  "media": {
+    "banner": "/projects/Mods/ardenne-aster-sedan/THUMBNAIL_CF.png",
+    "previews": [],
+    "screenshots": [
+      "/projects/Mods/ardenne-aster-sedan/Shots (1).jpg",
+      "/projects/Mods/ardenne-aster-sedan/Showcase1.jpg"
+    ]
+  },
+  "description": "Introducing the Ardenne Aster, the debut model from ARDENNE, a luxury automotive marque built around timeless design, refined engineering, and an uncompromising attention to detail.\n\nThe Aster represents the beginning of a new era, a grand touring coupe designed for those who appreciate understated sophistication. Its sculpted silhouette, flowing body lines, and aerodynamic profile create a presence that feels both elegant and commanding, blending classic European luxury with modern performance aesthetics.",
+  "highlights": [],
+  "downloadOptions": {
+    "public": {
+      "url": "https://www.curseforge.com/inzoi/mods/cartest-a84bf7d9",
+      "date": "2026-10-12T20:26:00"
+    },
+    "patreonUrl": "https://www.patreon.com/MOOSTYLES/posts/ardenne-aster-172202150?utm_medium=clipboard_copy&utm_source=copyLink&utm_campaign=postshare_creator&utm_content=join_link"
+  },
+  "fileManifest": [
+    {
+      "filename": "ARDENNE Aster: Sedan",
+      "description": "Introducing the Ardenne Aster, the debut model from ARDENNE, a luxury automotive marque built around timeless design, refined engineering, and an uncompromising attention to detail.\n\nThe Aster represents the beginning of a new era, a grand touring coupe designed for those who appreciate understated sophistication. Its sculpted silhouette, flowing body lines, and aerodynamic profile create a presence that feels both elegant and commanding, blending classic European luxury with modern performance aesthetics."
+    }
+  ],
+  "collection": "ARDENNE",
+  "tags": [
+    "Automobiles"
+  ],
+  "knownIssues": [],
+  "installation": [],
+  "fileTypes": [
+    "inZOI Mod File"
+  ],
+  "status": {
+    "compatibility": "working",
+    "gameVersion": "inZOI"
+  },
+  "dateAdded": "2026-10-13T01:26:41Z",
+  "legacy": {
+    "isArchiveItem": false,
+    "isNew": true
+  }
+}

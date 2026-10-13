@@ -1,11 +1,15 @@
 {
-  "slug": "getting-started",
-  "title": "Your first MOOSTYLES post",
-  "type": "Blog",
+  "title": "MOOSTYLES on Pause",
+  "slug": "moostyles-on-pause",
+  "type": "Update",
   "tags": [],
-  "excerpt": "Replace this draft with your own announcement, blog or tutorial.",
+  "excerpt": "A short statement by the team from MOOSTYLE regarding the brands current state.",
+  "cover": "/projects/Blog/getting-started/banner.jpg",
+  "coverAlt": "MOOSTYLES Banner",
   "author": "MOOSTYLES",
-  "status": "draft",
-  "featured": false,
-  "body": "## Start your story\n\nReplace this draft with your own content. Add headings, links, lists and images using the editor.\n\nSet the post type, add tags and a cover, then change Visibility to Published when it is ready."
+  "publishedAt": "2026-10-13T01:13:31Z",
+  "updatedAt": "2026-10-13T01:12:00Z",
+  "status": "published",
+  "featured": true,
+  "body": "## Hello All!\n\nI wanted to give all my supports a quick update regarding the state of MOOSTYLES. As of right now we are on our way to 200,000+ downloads on Curseforge and 45 uploaded mods. At this time we have learnt alot of things while making it this far and we have reflected on all that we have done. We now wish to take a short break to return to older mods to be able to properly update and bring their quality to the standards that we have established here at MOOSTYLES.\n\nFret not, we shall be back in no time and you will still see content from us, however, they will only be UPDATES to existing mods rather than anything NEW for the time being. Thank you for understanding us and we hope you enjoy the numerous content that is to be expected!\n\n\\- MOOSTYLES Team."
 }

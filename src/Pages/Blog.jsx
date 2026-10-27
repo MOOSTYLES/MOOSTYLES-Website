@@ -31,7 +31,7 @@ export const Blog = () => {
         <FeaturedCollections />
         <section className="blog-section blog-intro">
           <p className="blog-eyebrow">The MOOSTYLES journal</p>
-          <h1 className="support-my-work__heading"><img src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png" alt="" className="support-my-work__heading-logo" />Blog</h1>
+          <h1 className="support-my-work__heading"><img src="/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.webp" alt="" className="support-my-work__heading-logo" />Blog</h1>
           <p>Stories behind the designs. Ideas for your next build. Explore announcements, tutorials and a closer look at the world of MOOSTYLES.</p>
         </section>
         {featured && <section className="blog-section" aria-labelledby="blog-featured"><h2 id="blog-featured" className="newdesign-heading">In the spotlight</h2><PostCard post={featured} featured /></section>}

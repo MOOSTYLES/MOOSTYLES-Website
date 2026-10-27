@@ -122,3 +122,74 @@
 .saved-products__modal-confirm:hover {
   opacity: 0.9;
 }
+
+/* ========================================
+   MOOSTYLES MOD LISTING
+   Reuses the ARDENNE listing layout (ardenne.css) with MOOSTYLES colours
+   and the site font.
+   ======================================== */
+
+.moostyles-listing {
+  --ardenne-ink: #14191b;
+  --ardenne-muted: #5b6563;
+  --ardenne-line: #dfe5e4;
+  --ardenne-dark: #14191b;
+  --color-border: var(--ardenne-line);
+  color: var(--ardenne-ink);
+}
+
+/* Restore inheritance after the shared site's universal text-color rule. */
+.moostyles-listing main * { color: inherit; }
+.moostyles-listing main .ardenne-eyebrow { color: var(--color-accent); }
+.moostyles-listing main .ardenne-button { color: #ffffff; }
+
+.moostyles-listing .ardenne-listing {
+  position: relative;
+}
+
+.moostyles-listing .mod-breadcrumb {
+  margin-bottom: 30px;
+  color: var(--ardenne-muted);
+}
+
+.moostyles-listing .mod-breadcrumb:hover { color: var(--color-accent); }
+
+.moostyles-listing .ardenne-listing__header h1 {
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.moostyles-listing .ardenne-listing__filter-title h2,
+.moostyles-listing .ardenne-listing__result-heading h2 {
+  font-weight: 600;
+}
+
+/* Solid surfaces so the grid background doesn't show through. */
+.moostyles-listing :is(.ardenne-mod-card, .ardenne-empty) { background: #ffffff; }
+.moostyles-listing .ardenne-listing__filters :is(input, select) { background: #ffffff; }
+
+.moostyles-listing .ardenne-mod-card h3 {
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.moostyles-listing .ardenne-mod-card__save:hover,
+.moostyles-listing .ardenne-mod-card__save[aria-pressed="true"] {
+  background: #e6f5f2;
+}
+
+.moostyles-listing .ardenne-listing__more h2 {
+  font-weight: 700;
+}
+
+@media (min-width: 1280px) {
+  .moostyles-listing .ardenne-mod-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .moostyles-listing .ardenne-main {
+    width: 90%;
+  }
+}

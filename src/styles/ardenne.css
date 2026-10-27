@@ -49,18 +49,14 @@
 .ardenne-main { width: 80%; margin: 0 auto; padding: 0; }
 
 .ardenne-page .site-nav {
-  border-bottom: 1px solid var(--ardenne-line);
-  --nav-icon-bg: transparent;
   --nav-icon-fg: var(--ardenne-ink);
-  --nav-panel-bg: #f6f8f7;
-  --nav-panel-border: var(--ardenne-line);
+  --nav-icon-bg-hover: #e9f0ec;
+  --nav-line: var(--ardenne-line);
+  --nav-text: var(--ardenne-ink);
+  --nav-text-idle: var(--ardenne-muted);
 }
-.ardenne-page .site-nav__bar { width: 80%; margin: 0 auto; padding: 22px 0; }
-.ardenne-page .site-nav__catalog-link { border-radius: 0; background: transparent; color: var(--ardenne-ink); font-weight: 400; letter-spacing: .015em; }
-.ardenne-page .site-nav__catalog-link:hover { color: var(--color-accent); background: #e9f0ec; }
+.ardenne-page .site-nav__brand-label { font-weight: 400; }
 .ardenne-page .nav-icon-button { border-radius: 0; box-shadow: none; }
-.ardenne-page .nav-menu__brand-logo { filter: grayscale(1); }
-.ardenne-page .nav-menu__link--active { background: #e5ede8; color: var(--color-accent); }
 
 .ardenne-masthead, .ardenne-section-heading, .ardenne-listing__header { display: flex; align-items: flex-end; justify-content: space-between; gap: 32px; }
 .ardenne-masthead { align-items: center; padding: 40px 0 36px; }
@@ -232,8 +228,6 @@
 }
 
 @media (max-width: 760px) {
-  .ardenne-page .site-nav__bar { padding: 14px 0; }
-  .ardenne-page .site-nav__catalog-link { padding: 8px 5px; font-size: 12px; }
   .ardenne-masthead { padding: 32px 0; }
   .ardenne-masthead, .ardenne-section-heading { flex-direction: column; align-items: flex-start; gap: 24px; }
   .ardenne-masthead__brand { gap: 18px; }
@@ -297,11 +291,6 @@
 }
 
 @media (max-width: 440px) {
-  .ardenne-page .site-nav__bar { width: 90%; }
-  .ardenne-page .site-nav__home, .ardenne-page .site-nav__actions > .nav-icon-button, .ardenne-page .site-nav__actions .nav-primary-icon { width: 32px; height: 32px; }
-  .ardenne-page .site-nav__home-logo { width: 27px; height: 27px; }
-  .ardenne-page .site-nav__catalogs, .ardenne-page .site-nav__actions { gap: 2px; }
-  .ardenne-page .site-nav__catalog-link { padding: 8px 3px; font-size: 11px; }
   .ardenne-category-filters { gap: 0 18px; }
   .ardenne-category-filters button { font-size: 11px; gap: 6px; }
   .ardenne-mod-card__body { padding: 18px; }

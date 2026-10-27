@@ -45,6 +45,14 @@ export const getStandardMods = () => getModsForCatalog(allMods, "standard");
 
 export const getArdenneMods = () => getModsForCatalog(allMods, "ardenne");
 
+export const HOMEPAGE_MOD_COUNT = 4;
+
+// Newest standard mods first; mods without a date sort last.
+export const getLatestStandardMods = (limit) =>
+  [...getStandardMods()]
+    .sort((a, b) => (Date.parse(b.dateAdded) || 0) - (Date.parse(a.dateAdded) || 0))
+    .slice(0, limit);
+
 export const getActiveMods = () => allMods.filter((mod) => !mod.legacy.isArchiveItem);
 
 export const getModBySlug = (slug) => bySlug.get(slug) ?? null;
@@ -76,18 +84,3 @@ export const getRelatedMods = (slug, limit = 4) => {
     .slice(0, limit);
 };
 
-export const getGalleryEntries = () =>
-  [...allMods]
-    .sort((a, b) => (Date.parse(b.dateAdded) || 0) - (Date.parse(a.dateAdded) || 0))
-    .flatMap((mod) => {
-      const seen = new Set([mod.media.banner]);
-      // Keep existing screenshot URLs stable when previews are added.
-      const screenshots = mod.media.screenshots.map((src, index) => ({ src, key: `${mod.slug}-${index}` }));
-      const previews = mod.media.previews.map((src, index) => ({ src, key: `${mod.slug}-preview-${index}` }));
-      const images = [...screenshots, ...previews].filter(({ src }) => {
-        if (!src || /\.mp4(\?|$)/i.test(src) || seen.has(src)) return false;
-        seen.add(src);
-        return true;
-      });
-      return images.map((entry) => ({ ...entry, modName: mod.name, modSlug: mod.slug }));
-    });

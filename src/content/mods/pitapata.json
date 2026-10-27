@@ -9,10 +9,10 @@
     "gameVersion": "inZOI"
   },
   "media": {
-    "banner": "/projects/Products/PITAPATA/pitapata-chibi-characters.png",
+    "banner": "/projects/Products/PITAPATA/pitapata-chibi-characters.webp",
     "previews": [
-      "/projects/Products/PITAPATA/pita-chibi-figure.png",
-      "/projects/Products/PITAPATA/sugarzoi-kevin-chibi-figure.png"
+      "/projects/Products/PITAPATA/pita-chibi-figure.webp",
+      "/projects/Products/PITAPATA/sugarzoi-kevin-chibi-figure.webp"
     ],
     "screenshots": []
   },

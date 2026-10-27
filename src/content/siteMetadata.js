@@ -4,8 +4,8 @@ export const SITE_METADATA = {
   name: "MOOSTYLES",
   creator: "MooCalf",
   description: "inZOI furniture, decor, custom brands and build inspiration by MooCalf. Explore MOOSTYLES mods, in-game screenshots, practical guides and ARDENNE.",
-  image: "/projects/HeroSection/oceanclass_hero.png",
-  logo: "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.png",
+  image: "/projects/HeroSection/oceanclass_hero.webp",
+  logo: "/projects/Website Branding/MOOSTYLES LOGO - TEAL COLOR.webp",
   profiles: [
     "https://www.patreon.com/c/MOOSTYLES",
     "https://www.instagram.com/moostyles_inzoi/",
@@ -50,13 +50,6 @@ export const PAGE_METADATA = {
     type: "CollectionPage",
     keywords: ["ARDENNE mods", "inZOI mods", "inZOI luxury collection", ...LIVE_ARDENNE_CATEGORIES.map((category) => category.label)],
     image: "/projects/ARDENNE/yacht.webp",
-  },
-  "/gallery": {
-    title: "inZOI Gallery | Interiors & Build Inspiration | MOOSTYLES",
-    description: "Explore inZOI interiors, furniture and decor through MOOSTYLES in-game screenshots. Find visual inspiration for homes, offices, cafes and your next build.",
-    label: "Gallery",
-    type: "ImageGallery",
-    keywords: ["inZOI screenshots", "inZOI gallery", "inZOI build inspiration", "inZOI interior design", "inZOI homes", "inZOI offices", "inZOI cafes"],
   },
   "/guides": {
     title: "inZOI Modding Guides | Installation & Help | MOOSTYLES",

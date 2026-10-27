@@ -1,6 +1,6 @@
 export const ARDENNE_LOGOS = {
-  black: "/projects/ARDENNE/Logo/ARDENNE LOGO - Black.png",
-  white: "/projects/ARDENNE/Logo/ARDENNE LOGO - White.png",
+  black: "/projects/ARDENNE/Logo/ARDENNE LOGO - Black.webp",
+  white: "/projects/ARDENNE/Logo/ARDENNE LOGO - White.webp",
 };
 
 export const ARDENNE_CATEGORIES = [
@@ -31,6 +31,8 @@ export const ARDENNE_CATEGORIES = [
     carouselLabel: "Yacht",
     tags: ["yachts", "yacht", "boats", "boat", "yachting"],
     image: "/projects/ARDENNE/yacht.webp",
+    heroImage: "/projects/ARDENNE/oceanclass_hero.webp",
+    heroAlt: "ARDENNE OceanClass yacht on blue water beside a tropical beach",
     alt: "White superyacht on turquoise water beside a rugged coastline",
     caption: "Beyond the horizon",
     eyebrow: "Beyond the horizon",

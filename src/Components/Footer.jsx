@@ -72,7 +72,7 @@ export const Footer = ({ brand = "MOOSTYLES" }) => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="mb-4 sm:mb-6">
             <img
-              src={brand === "ARDENNE" ? ARDENNE_LOGOS.white : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.png"}
+              src={brand === "ARDENNE" ? ARDENNE_LOGOS.white : "/projects/Website Branding/MOOSTYLES LOGO - BLACK COLOR.webp"}
               alt={`${brand} Logo`}
               className="h-16 w-16 sm:h-20 sm:w-20 md:h-24 md:w-24 lg:h-28 lg:w-28 mx-auto object-contain"
             />

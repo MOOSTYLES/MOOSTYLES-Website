@@ -42,21 +42,6 @@ export const getModMetadata = (mod) => {
   };
 };
 
-export const getGalleryMetadata = (entry, caption) => {
-  const number = Number(entry.key.slice(entry.key.lastIndexOf("-") + 1)) + 1;
-  return {
-    pageTitle: `${entry.modName} - inZOI Screenshot ${number} | MOOSTYLES`,
-    pageDescription: summary(`${entry.modName} inZOI screenshot ${number}. ${caption}. Explore build and design inspiration, then view the featured custom content.`),
-    canonical: `/gallery/${entry.key}`,
-    ogImage: entry.src,
-    imageAlt: caption,
-    pageType: "ItemPage",
-    keywords: [entry.modName, "inZOI screenshots", "inZOI design inspiration", "inZOI custom content"],
-    breadcrumbs: [{ name: "Home", url: "/" }, { name: "Gallery", url: "/gallery" }, { name: `${entry.modName} Screenshot ${number}`, url: `/gallery/${entry.key}` }],
-    galleryEntry: entry,
-  };
-};
-
 export const buildPageMetadata = (pathname, options = {}) => {
   const path = routeAlias(cleanPath(pathname));
   const page = PAGE_METADATA[path] ?? {};
@@ -111,10 +96,6 @@ export const buildPageMetadata = (pathname, options = {}) => {
       ...(mod.collection ? { isPartOf: { "@type": "Collection", name: mod.collection, url: absolute(ardenne ? "/ardenne/mods" : "/mods") } } : {}),
       hasPart: (mod.fileManifest ?? []).map((file) => ({ "@type": "CreativeWork", name: file.filename, description: plainText(file.description) })),
     });
-  }
-  if (options.galleryEntry) {
-    pageNode.mainEntity = { "@id": imageId };
-    graph.find((item) => item["@id"] === imageId).about = { "@id": `${absolute(`/mods/${options.galleryEntry.modSlug}`)}#mod` };
   }
   if (article) {
     const articleId = `${canonical}#article`;

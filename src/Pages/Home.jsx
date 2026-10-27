@@ -1,9 +1,8 @@
 import { NavigationBar } from "@/Components/NavigationBar";
 import { Metadata } from "@/Components/Metadata";
 import { FeaturedCollections } from "@/Components/HomepageComponents/FeaturedCollections";
-import { SupportMyWork } from "@/Components/HomepageComponents/SupportMyWork";
+import { Overview, SupportMyWork } from "@/Components/HomepageComponents/SupportMyWork";
 import { ModListSection } from "@/Components/HomepageComponents/ModListSection";
-import { GalleryTeaser } from "@/Components/HomepageComponents/GalleryTeaser";
 import { PartnershipCallout } from "@/Components/HomepageComponents/PartnershipCallout";
 import { Footer } from "@/Components/Footer";
 import { WebsiteBackground } from "@/Components/WebsiteBackground";
@@ -17,9 +16,9 @@ export const Home = () => (
       <NavigationBar />
       <main id="main-content">
         <FeaturedCollections />
-        <SupportMyWork />
+        <Overview />
         <ModListSection />
-        <GalleryTeaser />
+        <SupportMyWork />
         <PartnershipCallout />
         <Footer />
       </main>

@@ -1,4 +1,5 @@
 import { ARDENNE_CATEGORIES } from "../content/ardenne.js";
+import { MOOSTYLES_CATEGORIES } from "../content/moostylesCategories.js";
 
 const normalize = (value) => String(value ?? "").trim().toLowerCase().replace(/[-_\s]+/g, " ");
 
@@ -11,6 +12,12 @@ export const getArdenneCategories = (mod) => {
   if (!isArdenneMod(mod)) return [];
   const tags = new Set((mod.tags ?? []).map(normalize));
   return ARDENNE_CATEGORIES.filter((category) => category.tags.some((tag) => tags.has(tag)));
+};
+
+export const getMoostylesCategories = (mod) => {
+  if (isArdenneMod(mod)) return [];
+  const tags = new Set((mod.tags ?? []).map(normalize));
+  return MOOSTYLES_CATEGORIES.filter((category) => category.tags.some((tag) => tags.has(normalize(tag))));
 };
 
 // Keep held-back category uploads out of every public catalog and detail route.

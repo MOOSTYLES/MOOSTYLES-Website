@@ -51,13 +51,6 @@ export const PAGE_METADATA = {
     keywords: ["ARDENNE mods", "inZOI mods", "inZOI luxury collection", ...LIVE_ARDENNE_CATEGORIES.map((category) => category.label)],
     image: "/projects/ARDENNE/yacht.webp",
   },
-  "/gallery": {
-    title: "inZOI Gallery | Interiors & Build Inspiration | MOOSTYLES",
-    description: "Explore inZOI interiors, furniture and decor through MOOSTYLES in-game screenshots. Find visual inspiration for homes, offices, cafes and your next build.",
-    label: "Gallery",
-    type: "ImageGallery",
-    keywords: ["inZOI screenshots", "inZOI gallery", "inZOI build inspiration", "inZOI interior design", "inZOI homes", "inZOI offices", "inZOI cafes"],
-  },
   "/guides": {
     title: "inZOI Modding Guides | Installation & Help | MOOSTYLES",
     description: "Start using inZOI custom content with practical MOOSTYLES guides. Learn mod installation, Build Mode searches, troubleshooting and download safety.",

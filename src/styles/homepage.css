@@ -2,11 +2,115 @@
    FEATURED COLLECTIONS
    ======================================== */
 
+/* Sized and styled to match the ARDENNE hero. */
 .featured-collections {
-  max-width: var(--maxw-content);
+  width: 80%;
   margin: 0 auto;
-  padding: var(--space-3);
+  padding: var(--space-4) 0 0;
   background: transparent;
+}
+
+.home-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  min-height: 650px;
+  background: #e9eeeb;
+}
+
+.home-hero > img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.home-hero__shade {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: linear-gradient(0deg, rgba(246, 248, 247, 0.85), transparent 28%);
+}
+
+.home-hero__bottom {
+  position: absolute;
+  bottom: 30px;
+  left: 6%;
+  right: 6%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.home-hero__slides {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.home-hero__slides button {
+  min-width: 44px;
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  border-bottom: 1px solid transparent;
+  background: transparent;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: border-color 0.2s ease;
+}
+
+.featured-collections .home-hero__slides button {
+  color: #626e68;
+}
+
+.featured-collections .home-hero__slides button:hover,
+.featured-collections .home-hero__slides button[aria-current="true"] {
+  color: var(--color-accent);
+}
+
+.home-hero__slides button[aria-current="true"] {
+  border-bottom-color: var(--color-accent);
+}
+
+.home-hero__slides button:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.home-hero__caption {
+  margin: 0 0 12px;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-align: right;
+}
+
+@media (max-width: 760px) {
+  .featured-collections {
+    width: 90%;
+  }
+
+  .home-hero {
+    min-height: 600px;
+  }
+
+  .home-hero__bottom {
+    left: 8%;
+    right: 8%;
+  }
+
+  .home-hero__caption {
+    display: none;
+  }
 }
 
 /* ========================================
@@ -19,8 +123,6 @@
 .support-my-work *,
 .mod-list-section,
 .mod-list-section *,
-.gallery-teaser,
-.gallery-teaser *,
 .partnership-callout,
 .partnership-callout * {
   color: #000000;
@@ -37,7 +139,6 @@
 
 .mod-list-section,
 .support-my-work,
-.gallery-teaser,
 .partnership-callout {
   max-width: var(--maxw-content);
   margin: 0 auto;
@@ -46,8 +147,7 @@
 }
 
 .mod-list-section__heading,
-.support-my-work__heading,
-.gallery-teaser__heading {
+.support-my-work__heading {
   font-size: var(--font-size-6);
   text-align: left;
   margin: 0 0 var(--space-3);
@@ -178,15 +278,22 @@
    MOD LIST SECTION
    ======================================== */
 
-.mod-list-section {
-  text-align: center;
+.mod-list-section__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--space-3);
+  margin-bottom: var(--space-3);
+}
+
+.mod-list-section__header .mod-list-section__heading {
+  margin: 0;
 }
 
 .mod-list-section__grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: var(--space-2);
-  justify-items: center;
+  gap: var(--space-3);
 }
 
 .mod-list-section__grid .media-card__image {
@@ -195,25 +302,23 @@
 
 @media (min-width: 640px) {
   .mod-list-section__grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: var(--space-4);
   }
 }
 
 @media (min-width: 1024px) {
   .mod-list-section__grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
 .mod-list-section__grid > * {
   width: 100%;
   min-width: 0;
-  max-width: 180px;
 }
 
-.mod-list-section__footer {
-  margin-top: var(--space-4);
+.mod-list-section__grid .media-card__title {
+  font-size: var(--font-size-2);
 }
 
 /* ========================================
@@ -235,37 +340,6 @@
   color: var(--color-accent);
   background-color: rgba(13, 148, 136, 0.08);
   transform: translateX(4px);
-}
-
-/* ========================================
-   GALLERY TEASER + GALLERY PAGE GRID
-   ======================================== */
-
-.gallery-teaser {
-  text-align: center;
-}
-
-.gallery-teaser__note {
-  max-width: var(--maxw-text);
-  text-align: left;
-  margin: 0 0 var(--space-4);
-}
-
-.gallery-teaser__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-2);
-  margin: var(--space-3) 0;
-}
-
-.gallery-page__grid {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-@media (min-width: 640px) {
-  .gallery-page__grid {
-    grid-template-columns: repeat(4, 1fr);
-  }
 }
 
 /* ========================================
@@ -361,10 +435,4 @@
   text-align: center;
   background: #ffffff;
   color: #000000;
-}
-
-.gallery-entry__image {
-  width: 100%;
-  border-radius: var(--radius-lg);
-  margin: var(--space-3) 0;
 }

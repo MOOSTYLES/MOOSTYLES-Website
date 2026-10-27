@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { buildPageMetadata, getModMetadata, getGalleryMetadata, serializeJsonLd, splitHoistedHead } from "./seo";
+import { buildPageMetadata, getModMetadata, serializeJsonLd, splitHoistedHead } from "./seo";
 import { PAGE_METADATA } from "../content/siteMetadata";
 import mod from "../content/mods/halo-executive-chair.json";
 
@@ -10,7 +10,6 @@ describe("page-specific SEO", () => {
     const pages = Object.keys(PAGE_METADATA).map((path) => buildPageMetadata(path));
     expect(new Set(pages.map((page) => page.description)).size).toBe(pages.length);
     expect(buildPageMetadata("/").description).toMatch(/inspiration|screenshots/);
-    expect(buildPageMetadata("/gallery").description).toMatch(/interiors|build/);
     expect(buildPageMetadata("/ardenne").description).toMatch(/automobiles and yachts/);
     expect(JSON.stringify(buildPageMetadata("/ardenne"))).not.toMatch(/aviation|aircraft|\bsky\b/i);
   });
@@ -61,16 +60,6 @@ describe("CMS mod and screenshot metadata", () => {
     expect(metadata.siteName).toBe("ARDENNE by MOOSTYLES");
     expect(node(metadata, "BreadcrumbList").itemListElement.map((item) => item.name)).toEqual(["Home", "ARDENNE", "ARDENNE Collection", mod.name]);
     expect(node(metadata, "CreativeWork").isPartOf.name).toBe("ARDENNE");
-  });
-
-  it("gives different screenshots distinct titles and crawlable image URLs", () => {
-    const entry = { modName: mod.name, modSlug: mod.slug, src: "/projects/Images/an image.jpg", key: `${mod.slug}-0` };
-    const first = buildPageMetadata(`/gallery/${entry.key}`, getGalleryMetadata(entry, "An inZOI office"));
-    const second = buildPageMetadata(`/gallery/${mod.slug}-1`, getGalleryMetadata({ ...entry, key: `${mod.slug}-1` }, "An inZOI office"));
-    expect(first.title).not.toBe(second.title);
-    expect(first.description).not.toBe(second.description);
-    expect(node(first, "ImageObject").contentUrl).toBe("https://moostyles.com/projects/Images/an%20image.jpg");
-    expect(node(first, "ImageObject").caption).toBe("An inZOI office");
   });
 });
 

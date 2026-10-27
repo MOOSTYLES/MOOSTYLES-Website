@@ -7,8 +7,6 @@ import { ModDetail } from "./Pages/ModDetail";
 import { ModsIndex } from "./Pages/ModsIndex";
 import { Ardenne } from "./Pages/Ardenne";
 import { ArdenneMods } from "./Pages/ArdenneMods";
-import { Gallery } from "./Pages/Gallery";
-import { GalleryEntry } from "./Pages/GalleryEntry";
 import { ModDownload } from "./Pages/ModDownload";
 import { Redirector } from "./Pages/Redirector";
 import AboutMe from "./Pages/AboutMe";
@@ -56,8 +54,8 @@ function App() {
           <Route path="/collections/:slug" element={<Navigate to="/mods" replace />} />
           <Route path="/brand/:id" element={<Navigate to="/mods" replace />} />
 
-          <Route path="/gallery" element={<Gallery />} />
-          <Route path="/gallery/:slug" element={<GalleryEntry />} />
+          <Route path="/gallery" element={<Navigate to="/mods" replace />} />
+          <Route path="/gallery/:slug" element={<Navigate to="/mods" replace />} />
 
           <Route path="/api/mods/:id/download" element={<ModDownload />} />
           <Route path="/redirector" element={<Redirector />} />

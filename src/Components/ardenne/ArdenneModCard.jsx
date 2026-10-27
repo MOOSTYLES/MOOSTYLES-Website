@@ -6,8 +6,11 @@ import { getImageAlt } from "@/lib/imageMeta";
 import { getArdenneCategories } from "@/lib/modCatalog";
 import { isProductSaved, saveProduct, unsaveProduct } from "@/lib/savedProducts";
 
-export const ArdenneModCard = ({ mod }) => {
-  const categories = getArdenneCategories(mod);
+const toArdenneLabels = (mod) =>
+  getArdenneCategories(mod).map((category) => ({ id: category.id, label: category.label, to: `/ardenne/mods?category=${category.id}` }));
+
+// Shared by both catalogs; MOOSTYLES passes its own category labels.
+export const ArdenneModCard = ({ mod, labels = toArdenneLabels(mod) }) => {
   const href = `/mods/${mod.slug}`;
   const [saved, setSaved] = useState(false);
   const [notice, setNotice] = useState("");
@@ -52,8 +55,8 @@ export const ArdenneModCard = ({ mod }) => {
       </div>
       <div className="ardenne-mod-card__body">
         <div className="ardenne-mod-card__labels" aria-label={`${mod.name} categories`}>
-          {categories.length ? categories.map((category) => (
-            <Link key={category.id} to={`/ardenne/mods?category=${category.id}`}>{category.label}</Link>
+          {labels.length ? labels.map((label) => (
+            <Link key={label.id} to={label.to}>{label.label}</Link>
           )) : <span>Uncategorised</span>}
         </div>
         <h3><Link to={href}>{mod.name}</Link></h3>

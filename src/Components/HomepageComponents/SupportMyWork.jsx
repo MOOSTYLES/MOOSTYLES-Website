@@ -25,7 +25,7 @@ const SUPPORT_TIERS = [
   },
 ];
 
-export const SupportMyWork = () => (
+export const Overview = () => (
   <section className="support-my-work">
     <h1 className="support-my-work__heading">
       <img
@@ -45,10 +45,14 @@ export const SupportMyWork = () => (
       We care about form, atmosphere and the small details that make a space feel
       complete. Together with our partnered brands, we explore different styles
       and ways of living, giving you more freedom to shape your inZOI world.
-      Discover our collections, find inspiration in the gallery and choose the
+      Discover our collections and choose the
       pieces that speak to the way you create.
     </p>
+  </section>
+);
 
+export const SupportMyWork = () => (
+  <section className="support-my-work">
     <h1 className="support-my-work__heading">
       <img
         src="/projects/Website Branding/patreon-icon-black.svg"
